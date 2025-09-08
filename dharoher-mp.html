@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>मध्य प्रदेश की ऐतिहासिक धरोहरें - सिंहस्थ 2028</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .filter-bar{max-width:1100px;margin:10px auto;display:flex;gap:10px;flex-wrap:wrap}
+    .filter-bar input,.filter-bar select{padding:8px;border:1px solid #ccc;border-radius:6px}
+    .grid{max-width:1100px;margin:10px auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+    .card{background:#fffde7;border:1px solid #ccc;border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+    .card header{background:#f57f17;color:#fff;padding:12px 14px;font-weight:700}
+    .card .body{padding:12px 14px;display:flex;flex-direction:column;gap:10px}
+    .meta{font-size:13px;color:#444}
+    .chipset{display:flex;flex-wrap:wrap;gap:6px}
+    .chip{background:#fff3cd;border:1px solid #f57f17;border-radius:16px;padding:4px 8px;font-size:12px}
+    details{border:1px dashed #f57f17;border-radius:8px;padding:8px}
+    details summary{cursor:pointer;font-weight:700;color:#d84315}
+    .btn{background:#f57f17;color:#fff;border:none;border-radius:6px;padding:8px 12px;cursor:pointer}
+    .btn:hover{background:#ef6c00}
+    .links a{display:inline-block;margin-right:10px;color:#1565c0;text-decoration:none}
+    .links a:hover{text-decoration:underline}
+    .gallery{display:flex;gap:8px;flex-wrap:wrap}
+    .gallery img{width:100px;height:70px;object-fit:cover;border-radius:6px;border:1px solid #ddd;cursor:pointer}
+    .mapbox iframe{width:100%;height:240px;border:none;border-radius:8px}
+    .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1000;justify-content:center;align-items:center}
+    .modal-content{background:#fff;padding:8px;border-radius:8px;max-width:90%;max-height:85%}
+    .modal-content img{max-width:100%;max-height:80vh;display:block}
+    .modal-close{display:block;text-align:right;margin-bottom:6px}
+    .modal-close button{background:#d84315;color:#fff;border:none;padding:6px 10px;border-radius:6px;cursor:pointer}
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="top-banner">
+  <div class="top-left"><img src="file:///C:\Users\HP\Desktop\New Work\simhasth web\logo\logo.jpeg" alt = 'Logo'><span>सिंहस्थ 2028</span></div>
+  <div class="top-right"><span onclick="toggleNotif()">🔔</span>    <a href="login.html">Login</a>
+    <a href="register.html">Register</a></div>
+  <div id="notif-box"><p>ℹ️ धरोहर जानकारी समय-समय पर अपडेट करें—आधिकारिक/पुरातत्व स्रोत देखें।</p></div>
+</div>
+<div class="notif-bar"><marquee>मध्य प्रदेश की ऐतिहासिक धरोहरें — यूनेस्को साइट्स | किले | महल | गुफ़ाएँ | मंदिर | क़िलाबंदी</marquee></div>
+
+<!-- Menu -->
+<nav>
+  <span class="menu-toggle" onclick="toggleMenu()">☰ मेनू</span>
+  <ul id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-sub"><a href="#">मंदिर जानकारी</a>
+      <ul>
+        <li><a href="mahakal.html">महाकाल</a></li>
+        <li><a href="harsiddhi.html">हरसिद्धि</a></li>
+        <li><a href="kalbhairav.html">काल भैरव</a></li>
+        <li><a href="mangalnath.html">मंगलनाथ</a></li>
+      </ul>
+    </li>
+    <li class="has-sub"><a href="#">लाइव दर्शन</a>
+      <ul>
+        <li><a href="mahakal-live.html">महाकाल लाइव</a></li>
+        <li><a href="harsiddhi-live.html">हरसिद्धि लाइव</a></li>
+        <li><a href="mangalnath-live.html">मंगलनाथ लाइव</a></li>
+      </ul>
+    </li>
+    <li><a href="lost-found.html">Lost & Found</a></li>
+    <li class="has-sub"><a href="#">Booking</a>
+      <ul>
+        <li><a href="train-booking.html">ट्रेन</a></li>
+        <li><a href="bus-booking.html">बस</a></li>
+        <li><a href="hotel-booking.html">होटल</a></li>
+        <li><a href="food-booking.html">फूड</a></li>
+        <li><a href="ride-booking.html">राइड</a></li>
+      </ul>
+    </li>
+    <li class="has-sub"><a href="#">मेला क्षेत्र</a>
+      <ul>
+        <li><a href="mela-mahakal.html">महाकाल मंदिर</a></li>
+        <li><a href="mela-ramghat.html">रामघाट</a></li>
+        <li><a href="mela-mangalnath.html">मंगलनाथ</a></li>
+      </ul>
+    </li>
+    <li><a href="teerth-mp.html">मध्य प्रदेश के प्रसिद्ध तीर्थ</a></li>
+    <li><a href="dharoher-mp.html">मध्य प्रदेश की ऐतिहासिक धरोहर</a></li>
+    <li><a href="emergency.html">Emergency</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<div class="hero" style="background:url('https://via.placeholder.com/1200x300.png?text=MP+Historical+Heritage') center/cover no-repeat;"></div>
+
+<!-- Filters -->
+<div class="filter-bar section">
+  <input type="text" id="searchBox" placeholder="खोजें: स्थल/जिला/काल/श्रेणी..." oninput="renderSites()"/>
+  <select id="districtFilter" onchange="renderSites()">
+    <option value="">जिला/क्षेत्र (सभी)</option>
+    <option>छतरपुर</option><option>रायसेन</option><option>दतिया</option><option>ग्वालियर</option>
+    <option>झाबुआ</option><option>धार</option><option>टिकमगढ़</option><option>भोपाल</option><option>खंडवा</option>
+  </select>
+  <select id="typeFilter" onchange="renderSites()">
+    <option value="">श्रेणी (सभी)</option>
+    <option>UNESCO</option>
+    <option>किला</option>
+    <option>महल/दुर्ग</option>
+    <option>शिलाश्रय/रॉक शेल्टर</option>
+    <option>मंदिर/शैली</option>
+    <option>पुरातत्व स्थल</option>
+  </select>
+</div>
+
+<!-- Cards -->
+<div class="grid" id="siteGrid"></div>
+
+<!-- Gallery Modal -->
+<div class="modal" id="imgModal">
+  <div class="modal-content">
+    <div class="modal-close"><button onclick="closeImg()">❌ बंद</button></div>
+    <img id="modalImg" src="" alt="Gallery"/>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div>© 2025 सिंहस्थ 2028 पोर्टल</div>
+  <div><a href="#">Disclaimer</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms</a></div>
+</footer>
+
+<!-- Chatbot -->
+<div id="chatbot-button" onclick="toggleChat()">🤖 सहायक</div>
+<div id="chatbot-box">
+  <div id="chat-header">सहायक <span onclick="toggleChat()" style="cursor:pointer;">❌</span></div>
+  <div id="chat-body"><div class="bot">🙏 नमस्ते! मैं आपकी कैसे मदद कर सकता हूँ?</div></div>
+  <div id="chat-input">
+    <input type="text" id="userInput" placeholder="संदेश लिखें..." onkeydown="if(event.key==='Enter'){sendMessage()}">
+    <button onclick="sendMessage()">➡️</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+/* ========== DATA (Placeholder — अपने प्रमाणित स्रोत से अपडेट करें) ========== */
+const HERITAGE = [
+  {
+    title: "खजुराहो समूह मंदिर",
+    district: "छतरपुर",
+    type: ["UNESCO","मंदिर/शैली"],
+    era: "10वीं–12वीं सदी (चंदेल)",
+    summary: "नागर शैली के शिल्पकला-उदाहरण; जीवन-चित्रण व अलंकरण के लिए विश्वप्रसिद्ध।",
+    history: "चंदेल राजाओं के काल में निर्माण; संरक्षण व पुनरुद्धार के कई चरण।",
+    features: ["कंदरिया महादेव","लक्ष्मण मंदिर","विश्वनाथ/दुलदेव","पूर्वी/पश्चिमी/दक्षिणी समूह"],
+    architecture: "उच्च पाषाण शिखर, मंडप-गर्भगृह योजना, सूक्ष्म मूर्तिकला।",
+    festivals: ["खजुराहो नृत्य महोत्सव"],
+    gallery: [
+      "file:///C:/Users/HP/Desktop/New%20Work/simhasth%20web/teerth/khajuraho_tample.jpg",
+      "file:///C:/Users/HP/Desktop/New%20Work/simhasth%20web/Teerth/Khajuraho.jpg"
+    ],
+    website: "https://chhatarpur.nic.in/",
+    mapQuery: "Khajuraho Temples"
+  },
+  {
+    title: "सांची स्तूप (विश्व धरोहर)",
+    district: "रायसेन",
+    type: ["UNESCO","पुरातत्व स्थल"],
+    era: "3री सदी ईसा पूर्व (अशोक) से मध्यकाल",
+    summary: "महान स्तूप, तोरण द्वार, बौद्ध स्मारक—विश्व धरोहर।",
+    history: "अशोक द्वारा आरंभ; शुंग-कुषाण विस्तारीकरण; ब्रितानी काल में संरक्षण।",
+    features: ["महान स्तूप","तोरण द्वार","संग्रहालय"],
+    architecture: "ईंट/पत्थर का स्तूप, रेलिंग, कथानक-reliefs।",
+    festivals: ["धम्मचक्र दिवस/स्थानीय बौद्ध आयोजन"],
+    gallery: [
+      "file:///C:/Users/HP/Desktop/New%20Work/simhasth%20web/Teerth/Sanchi01.jpg",
+      "file:///C:/Users/HP/Desktop/New%20Work/simhasth%20web/Teerth/Sanchi02.jpg"
+    ],
+    website: "https://raisen.nic.in/",
+    mapQuery: "Sanchi Stupa"
+  },
+  {
+    title: "भीमबेटका रॉक शेल्टर",
+    district: "रायसेन",
+    type: ["UNESCO","शिलाश्रय/रॉक शेल्टर"],
+    era: "प्रागैतिहासिक (पाषाण युग)",
+    summary: "गुफ़ा-आश्रय व चित्रांकन, मानव सभ्यता का प्रारम्भिक दस्तावेज़।",
+    history: "1957 में खोज; पुरातात्विक सर्वेक्षण द्वारा संरक्षित।",
+    features: ["रॉक पेंटिंग्स","प्राकृतिक शैल-रचना"],
+    architecture: "प्राकृतिक शिलाश्रय; चित्रों में वन्यजीवन/नृत्य/शिकार दृश्य।",
+    festivals: [],
+    gallery: [
+      "file:///C:/Users/HP/Desktop/New%20Work/simhasth%20web/Teerth/Bhimbetka.jpg",
+      "file:///C:/Users/HP/Desktop/New%20Work/simhasth%20web/Teerth/Bhimbetka_art.jpg"
+    ],
+    website: "https://raisen.nic.in/",
+    mapQuery: "Bhimbetka Rock Shelters"
+  },
+  {
+    title: "मांडू (धार) – जहाज़ महल परिसर",
+    district: "धार",
+    type: ["महल/दुर्ग"],
+    era: "मध्यकाल (मालवा सल्तनत)",
+    summary: "रूमानी स्थापत्य, झीलों के बीच जहाज़ महल, होशंग शाह का मक़बरा।",
+    history: "मालवा सल्तनत/हुमायूँ काल से जुड़ा समृद्ध इतिहास।",
+    features: ["जहाज़ महल","होशंग शाह का मक़बरा","हिंडोला महल","रोपमती महल"],
+    architecture: "चूना-पत्थर, झील-संयोग, मेहराब/गुम्बद शैली।",
+    festivals: ["मांडू उत्सव"],
+    gallery: [
+      "file:///C:/Users/HP/Desktop/New%20Work/simhasth%20web/Teerth/Mandu.jpg",
+      "file:///C:/Users/HP/Desktop/New%20Work/simhasth%20web/Teerth/mandu1.jpg"
+    ],
+    website: "https://dhar.nic.in/",
+    mapQuery: "Mandu Jahaz Mahal"
+  },
+  {
+    title: "ग्वालियर किला",
+    district: "ग्वालियर",
+    type: ["किला","महल/दुर्ग"],
+    era: "5वीं सदी से मध्यकाल/आधुनिक",
+    summary: "साहसिक दुर्ग, मान सिंह महल, गुरुद्वारा दाता बंदी छोड़, सास-बहू मंदिर।",
+    history: "तोमर/सूर्यवंशी/मुगल/सिंधिया शासन से संबंधित।",
+    features: ["मान सिंह महल","सास-बहू मंदिर","तानसेन समाधि"],
+    architecture: "बलुआ पत्थर दुर्ग, बुर्ज/प्राकार, महल-कक्ष सज्जा।",
+    festivals: ["तानसेन संगीत समारोह (शहर में)"],
+    gallery: [
+      "file:///C:/Users/HP/Desktop/New%20Work/simhasth%20web/teerth/gwalior _01.jpg",
+      "file:///C:/Users/HP/Desktop/New%20Work/simhasth%20web/Teerth/gwalior _02.jpg"
+    ],
+    website: "https://gwalior.nic.in/",
+    mapQuery: "Gwalior Fort"
+  },
+  {
+    title: "महेश्वर किला/घाट",
+    district: "खंडवा",
+    type: ["किला","मंदिर/शैली"],
+    era: "होलकर काल (18वीं सदी) — अहिल्याबाई होलकर",
+    summary: "नर्मदा तट पर महेश्वर किला व मंदिर-घाट—होलकर शासकों की राजधानी।",
+    history: "अहिल्याबाई होलकर द्वारा निर्माण/पोषण; शिल्प/हस्तकरघा प्रसिद्ध।",
+    features: ["अहिल्या किला","नर्मदा घाट","कसरेडी/हस्तकरघा"],
+    architecture: "नदी-आधारित दुर्ग/घाट, देवालय समूह।",
+    festivals: ["नर्मदा जयंती/स्थानीय मेले"],
+    gallery: [
+      "file:///C:/Users/HP/Desktop/New%20Work/simhasth%20web/Teerth/Maheshwar.jpg",
+      "file:///C:/Users/HP/Desktop/New%20Work/simhasth%20web/Teerth/maheshwar01.jpg"
+    ],
+    website: "https://khargone.nic.in/",
+    mapQuery: "Maheshwar Fort"
+  },
+];
+
+/* ========== RENDER ========== */
+function renderSites(){
+  const q = (document.getElementById('searchBox').value || '').toLowerCase();
+  const d = document.getElementById('districtFilter').value;
+  const t = document.getElementById('typeFilter').value;
+
+  const out = HERITAGE.filter(s=>{
+    const text = (s.title+" "+s.summary+" "+s.history+" "+s.architecture+" "+(s.features||[]).join(" ")+" "+(s.festivals||[]).join(" ")).toLowerCase();
+    const okQ = !q || text.includes(q);
+    const okD = !d || s.district === d;
+    const okT = !t || s.type.includes(t);
+    return okQ && okD && okT;
+  }).map(s => cardHTML(s)).join("");
+
+  document.getElementById('siteGrid').innerHTML = out || "<p style='grid-column:1/-1'>❌ कोई परिणाम नहीं मिला</p>";
+}
+
+function cardHTML(s){
+  const chips = s.type.map(x=>`<span class="chip">${x}</span>`).join("");
+  const feats = (s.features||[]).map(f=>`<li>${f}</li>`).join("");
+  const fest  = (s.festivals||[]).map(f=>`<li>${f}</li>`).join("");
+  const imgs  = (s.gallery||[]).map(src=>`<img src="${src}" alt="${s.title}" onclick="openImg('${src}')">`).join("");
+
+  const web  = s.website ? `<a href="${s.website}" target="_blank">🌐 आधिकारिक/जिला साइट</a>` : "";
+  const map  = s.mapQuery ? `<iframe src="https://maps.google.com/maps?q=${encodeURIComponent(s.mapQuery)}&output=embed"></iframe>` : "";
+
+  return `
+  <div class="card">
+    <header>${s.title}</header>
+    <div class="body">
+      <div class="meta"><b>जिला:</b> ${s.district} &nbsp;|&nbsp; <b>काल:</b> ${s.era || "—"}</div>
+      <div class="chipset">${chips}</div>
+
+      <details open>
+        <summary>📜 परिचय/इतिहास</summary>
+        <p><b>परिचय:</b> ${s.summary}</p>
+        <p><b>इतिहास:</b> ${s.history}</p>
+      </details>
+
+      <details>
+        <summary>🏛 स्थापत्य/विशेषताएँ</summary>
+        <p><b>स्थापत्य:</b> ${s.architecture || "—"}</p>
+        <ul>${feats}</ul>
+      </details>
+
+      <details>
+        <summary>🎉 त्यौहार/आयोजन</summary>
+        <ul>${fest || "—"}</ul>
+      </details>
+
+      <details>
+        <summary>🖼️ गैलरी</summary>
+        <div class="gallery">${imgs || "—"}</div>
+      </details>
+
+      <div class="links">${web}</div>
+      <div class="mapbox">${map}</div>
+
+      <button class="btn" onclick="alert('ℹ️ यह डेमो डेटा है — आधिकारिक/ASI/पर्यटन स्रोत से सत्यापित करें।')">ℹ️ सूचना</button>
+    </div>
+  </div>`;
+}
+
+/* ========== GALLERY MODAL ========== */
+function openImg(src){
+  const m = document.getElementById('imgModal');
+  document.getElementById('modalImg').src = src;
+  m.style.display = "flex";
+}
+function closeImg(){
+  document.getElementById('imgModal').style.display = "none";
+  document.getElementById('modalImg').src = "";
+}
+
+/* init */
+renderSites();
+</script>
+</body>
+</html>

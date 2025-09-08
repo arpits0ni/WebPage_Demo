@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>सिंहस्थ 2028 पोर्टल</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+
+<body class="index-page">
+
+<div class="top-banner">
+  <div class="top-left"><img src="file:///C:\Users\HP\Desktop\New Work\simhasth web\logo\logo.jpeg" alt = 'Logo'><span>सिंहस्थ 2028</span></div>
+  <div class="top-right">
+    <span onclick="toggleNotif()">🔔</span>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+  </div>
+  <div id="notif-box">
+    <p>⚠️ रामघाट क्षेत्र में भीड़ अधिक है।</p>
+    <p>ℹ️ महाकाल मंदिर VIP दर्शन 2 बजे।</p>
+    <p>✅ मंगलनाथ मार्ग खुला है।</p>
+  </div>
+</div>
+
+<div class="notif-bar"><marquee>⚠️ रामघाट भीड़ | ℹ️ महाकाल VIP दर्शन 2 बजे | ✅ मंगलनाथ मार्ग खुला | 🚫 पार्किंग निषेध</marquee></div>
+
+<nav>
+  <span class="menu-toggle" onclick="toggleMenu()">☰ मेनू</span>
+  <ul id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-sub"><a href="#">मंदिर जानकारी</a>
+      <ul>
+        <li><a href="mahakal.html">महाकाल</a></li>
+        <li><a href="harsiddhi.html">हरसिद्धि</a></li>
+        <li><a href="kalbhairav.html">काल भैरव</a></li>
+        <li><a href="mangalnath.html">मंगलनाथ</a></li>
+      </ul>
+    </li>
+    <li class="has-sub"><a href="#">लाइव दर्शन</a>
+      <ul>
+        <li><a href="mahakal-live.html">महाकाल लाइव</a></li>
+        <li><a href="harsiddhi-live.html">हरसिद्धि लाइव</a></li>
+        <li><a href="mangalnath-live.html">मंगलनाथ लाइव</a></li>
+      </ul>
+    </li>
+    <li><a href="lost-found.html">Lost & Found</a></li>
+    <li class="has-sub"><a href="#">Booking</a>
+      <ul>
+        <li><a href="train-booking.html">ट्रेन</a></li>
+        <li><a href="bus-booking.html">बस</a></li>
+        <li><a href="hotel-booking.html">होटल</a></li>
+        <li><a href="food-booking.html">फूड</a></li>
+        <li><a href="ride-booking.html">राइड</a></li>
+      </ul>
+    </li>
+    <li class="has-sub"><a href="#">मेला क्षेत्र</a>
+      <ul>
+        <li><a href="mela-mahakal.html">महाकाल मंदिर</a></li>
+        <li><a href="mela-ramghat.html">रामघाट</a></li>
+        <li><a href="mela-mangalnath.html">मंगलनाथ</a></li>
+      </ul>
+    </li>
+    <li><a href="teerth-mp.html">मध्य प्रदेश के प्रसिद्ध तीर्थ</a></li>
+    <li><a href="dharoher-mp.html">मध्य प्रदेश की ऐतिहासिक धरोहर</a></li>
+    <li><a href="emergency.html">Emergency</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <img src="Mahakal_img.jpg" class="hero-img" alt="Mahakal Temple">
+</section>
+
+
+<div class="section">
+  <h2>विशेष विचार</h2>
+  <div class="quotes-carousel" id="quote-carousel">
+    <div class="quote-slide active">"सिंहस्थ केवल मेला नहीं, यह भारत की सांस्कृतिक धरोहर है।"<br>– प्रधानमंत्री नरेंद्र मोदी</div>
+    <div class="quote-slide">"उज्जैन का महाकाल मंदिर आस्था का केंद्र है।"<br>– मुख्यमंत्री डॉ मोहन यादव</div>
+    <div class="quote-slide">"धर्म और संस्कृति का संगम सिंहस्थ है।"<br>– शंकराचार्य</div>
+  </div>
+</div>
+
+<div class="section info-boxes">
+  <div class="info-box"><h2>📢 प्रशासनिक आदेश</h2>
+    <div class="scroll-list"><div class="scroll-list-content">
+      <p>15 मार्च विशेष स्नान दिवस</p>
+      <p>VIP दर्शन सुबह 8 से 10</p>
+      <p>महाकाल मंदिर दर्शन समय 4 बजे तक</p>
+      <p>रामघाट मार्ग पर वाहनों पर रोक</p>
+    </div></div>
+  </div>
+  <div class="info-box"><h2>ℹ️ आवश्यक सूचना</h2>
+    <div class="scroll-list"><div class="scroll-list-content">
+      <p>रामघाट मार्ग प्रतिबंधित</p>
+      <p>मंगलनाथ क्षेत्र भीड़भाड़</p>
+      <p>VIP पास धारक अलग गेट से प्रवेश करें</p>
+      <p>लॉस्ट एंड फाउंड काउंटर मुख्य द्वार पर</p>
+    </div></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>भीड़ डेटा</h2>
+  <div class="tab-buttons">
+    <button onclick="showCrowdTab('countTab')">📊 काउंट</button>
+    <button onclick="showCrowdTab('mapTab')">🗺️ सिंहस्थ क्षेत्र</button>
+    <button onclick="showCrowdTab('graphTab')">📈 ग्राफ</button>
+  </div>
+  
+  <div id="countTab" class="crowd-tab active">
+    <table id="crowdTable">
+      <thead>
+        <tr>
+          <th>स्थान</th>
+          <th>भीड़ संख्या</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-loc-id="mahakal"><td>महाकाल मंदिर</td><td class="count">0</td></tr>
+        <tr data-loc-id="ramghat"><td>रामघाट</td><td class="count">0</td></tr>
+        <tr data-loc-id="mangalnath"><td>मंगलनाथ</td><td class="count">0</td></tr>
+        <tr data-loc-id="kalbhairav"><td>काल भैरव</td><td class="count">0</td></tr>
+      </tbody>
+    </table>
+    <div class="stepper-controls">
+      <button id="prevStep">⟵ पिछला</button>
+      <span id="countTabTimeLabel" class="time-label-count"></span>
+      <button id="nextStep">अगला ⟶</button>
+    </div>
+  </div>
+
+  <div id="mapTab" class="crowd-tab">
+    <div id="heatmap" style="height: 420px; width: 100%; border-radius:6px; overflow:hidden;"></div>
+    <div class="timeline-controls">
+      <button id="playPauseBtn" class="play-btn">▶</button>
+      <input type="range" id="timeSlider" min="0" value="0" step="1" class="slider">
+      <span id="currentTimeLabel" class="time-label"></span>
+    </div>
+  </div>
+  
+  <div id="graphTab" class="crowd-tab">
+    <div class="graph-controls">
+        <label for="locationSelect">स्थान चुनें:</label>
+        <select id="locationSelect"></select>
+    </div>
+    <div class="graph-container">
+        <canvas id="crowdLineChart"></canvas>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>डाउनलोड और अन्य लिंक</h2>
+  <div class="downloads">
+	<h3>डाउनलोड</h3>
+    <a href="file:///C:/Users/HP/Desktop/New Work/simhasth web/user menual.pdf">📘 यूजर मैनुअल डाउनलोड</a>
+    <a href="#">📱 Android App</a>
+    <a href="#">🍏 iOS App</a>
+  </div>
+  <div class="links">
+    <h3>सरकारी लिंक</h3>
+    <a href="#">🏛 नगर पालिका निगम</a>
+    <a href="#">🔒 साइबर सुरक्षा</a>
+    <a href="#">🚓 पुलिस विभाग</a>
+    <a href="#">🚑 स्वास्थ्य सेवाएं</a>
+  </div>
+</div>
+
+<div class="section">
+  <h2>हमारे साझेदार</h2>
+  <img src="https://via.placeholder.com/120x60.png?text=MP+Gov" alt="Partner">
+  <img src="https://via.placeholder.com/120x60.png?text=Tourism" alt="Partner">
+</div>
+
+<footer>
+  <div>© 2025 सिंहस्थ 2028 पोर्टल</div>
+  <div><a href="#">Disclaimer</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms</a></div>
+</footer>
+
+<div id="chatbot-button" onclick="toggleChat()">🤖 सहायक</div>
+<div id="chatbot-box">
+  <div id="chat-header">सहायक <span onclick="toggleChat()" style="cursor:pointer;">❌</span></div>
+  <div id="chat-body"><div class="bot">🙏 नमस्ते! मैं आपकी कैसे मदद कर सकता हूँ?</div></div>
+  <div id="chat-input">
+    <input type="text" id="userInput" placeholder="संदेश लिखें..." onkeydown="if(event.key==='Enter'){sendMessage()}">
+    <button onclick="sendMessage()">➡️</button>
+  </div>
+</div>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="script.js"></script>
+<script src="heatmap-lite.js"></script>
+</body>
+</html>

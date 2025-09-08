@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>हमारे बारे में (About Us) - सिंहस्थ 2028</title>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Optional Devanagari fonts (keeps headings crisp) -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="top-banner">
+<div class="top-left"><img src="file:///C:\Users\HP\Desktop\New Work\simhasth web\logo\logo.jpeg" alt = 'Logo'><span>सिंहस्थ 2028</span></div>
+
+    <div class="top-right">
+      <button class="icon-btn" onclick="toggleNotif()">🔔</button>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+    </div>
+
+    <!-- small notification popup -->
+    <div id="notif-box" aria-hidden="true">
+      <p>ℹ️ सिंहस्थ 2028 पोर्टल — लाइव दर्शन, बुकिंग और अहम सूचनाएँ एक जगह।</p>
+    </div>
+  </div>
+
+  <!-- Notification bar -->
+  <div class="notif-bar"><marquee>About • Vision • Features • Timeline • Team • Partners • Contact</marquee></div>
+
+  <!-- Menu (same structure as mahakal page) -->
+  <nav>
+    <span class="menu-toggle" onclick="toggleMenu()">☰ मेनू</span>
+
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li>
+
+      <li class="has-sub"><a href="#">मंदिर जानकारी</a>
+        <ul>
+          <li><a href="mahakal.html">महाकाल</a></li>
+          <li><a href="harsiddhi.html">हरसिद्धि</a></li>
+          <li><a href="kalbhairav.html">काल भैरव</a></li>
+          <li><a href="mangalnath.html">मंगलनाथ</a></li>
+        </ul>
+      </li>
+
+      <li class="has-sub"><a href="#">लाइव दर्शन</a>
+        <ul>
+          <li><a href="mahakal-live.html">महाकाल लाइव</a></li>
+          <li><a href="harsiddhi-live.html">हरसिद्धि लाइव</a></li>
+          <li><a href="mangalnath-live.html">मंगलनाथ लाइव</a></li>
+        </ul>
+      </li>
+
+      <li><a href="lost-found.html">Lost & Found</a></li>
+
+      <li class="has-sub"><a href="#">Booking</a>
+        <ul>
+          <li><a href="train-booking.html">ट्रेन</a></li>
+          <li><a href="bus-booking.html">बस</a></li>
+          <li><a href="hotel-booking.html">होटल</a></li>
+          <li><a href="food-booking.html">फूड</a></li>
+          <li><a href="ride-booking.html">राइड</a></li>
+        </ul>
+      </li>
+
+      <li class="has-sub"><a href="#">मेला क्षेत्र</a>
+        <ul>
+          <li><a href="mela-mahakal.html">महाकाल मंदिर</a></li>
+          <li><a href="mela-ramghat.html">रामघाट</a></li>
+          <li><a href="mela-mangalnath.html">मंगलनाथ</a></li>
+        </ul>
+      </li>
+
+      <li><a href="teerth-mp.html">मध्य प्रदेश के प्रसिद्ध तीर्थ</a></li>
+      <li><a href="dharoher-mp.html">मध्य प्रदेश की ऐतिहासिक धरोहर</a></li>
+      <li><a href="emergency.html">Emergency</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero (same as mahakal for consistent look) -->
+  <div class="hero" role="img" aria-label="Simhasth 2028 Banner">
+    <!-- optional centered title inside hero - style controlled by CSS -->
+    <div style="width:100%;text-align:center;color:#000000;font-weight:700;font-size:26px;text-shadow:1px 1px 4px rgba(0,0,0,0.5);">
+      सिंहस्थ 2028 • आपका डिजिटल साधन, आपकी आस्था
+    </div>
+  </div>
+
+  <!-- Main content: structured same as mahakal using .info-box blocks -->
+  <main class="section">
+
+    <div class="info-box">
+      <h2>हम कौन हैं?</h2>
+      <p class="lead">
+        <strong>“सिंहस्थ 2028 पोर्टल”</strong> श्रद्धालुओं और नागरिकों के लिए बनाया गया समग्र डिजिटल प्लेटफ़ॉर्म है।
+        हमारा उद्देश्य <strong>लाइव दर्शन</strong>, <strong>बुकिंग</strong>, <strong>मेला-क्षेत्र मार्गदर्शन</strong>, और <strong>आपातकालीन सेवाएँ</strong> एक ही स्थान पर पहुँचा कर
+        विश्वास और सुविधा प्रदान करना है।
+      </p>
+    </div>
+
+    <div class="info-box">
+      <h2>हमारी दृष्टि (Vision)</h2>
+      <ul>
+        <li>श्रद्धालुओं को सरल, सुलभ और सुरक्षित डिजिटल अनुभव देना।</li>
+        <li>भीड़ प्रबंधन व मार्गदर्शन के जरिए आयोजनों को शांतिपूर्ण बनाना।</li>
+        <li>स्थानीय प्रशासन व सेवाप्रदाताओं के साथ समन्वय कर समस्याओं का त्वरित समाधान।</li>
+      </ul>
+    </div>
+
+    <div class="info-box">
+      <h2>प्रमुख विशेषताएँ (Key Features)</h2>
+      <div class="features">
+        <div class="feat">✅ लाइव दर्शन (महाकाल, हरसिद्धि, मंगलनाथ)</div>
+        <div class="feat">🧭 मेला-क्षेत्र मार्गदर्शन, ज़ोन/मैप, भीड़-डेटा</div>
+        <div class="feat">🚆🚌🏨 बुकिंग: ट्रेन • बस • होटल • फूड • राइड</div>
+        <div class="feat">🚑 आपातकालीन सेवाएँ: पुलिस, एंबुलेंस, फायर, हेल्पडेस्क</div>
+        <div class="feat">🧾 लॉस्ट & फाउंड, नोटिफिकेशन/घोषणाएँ</div>
+        <div class="feat">📲 मोबाइल-फ्रेंडली, भविष्य में ऐप एकीकरण</div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h2>यात्रा का इतिहास (Timeline)</h2>
+      <div class="timeline">
+        <div class="titem"><b>जनवरी 2024:</b> परियोजना प्रारंभ, आवश्यकताओं का संकलन</div>
+        <div class="titem"><b>जून 2024:</b> UI/UX ड्राफ्ट, पायलट मॉड्यूल</div>
+        <div class="titem"><b>दिसंबर 2024:</b> बीटा लॉन्च (Live/Booking/Emergency)</div>
+        <div class="titem"><b>फ़रवरी 2025:</b> बीटा परीक्षण, फीडबैक इंटीग्रेशन</div>
+        <div class="titem"><b>अप्रैल 2025:</b> स्थिर रिलीज़—कंटेंट व सेवाएँ लाइव</div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h2>हमारी टीम (Team)</h2>
+      <div class="list">
+        <div class="row">
+          <div><b>परियोजना निदेशक</b><br><small>MPSeDC
+Department of Science & Technology
+Bhopal, Madhya Pradesh
+</small></div>
+        </div>
+        <div class="row">
+          <div><b>तकनीकी प्रमुख</b><br>Nageshwar Patidar</div>
+        </div>
+        <div class="row">
+          <div><b>UI/UX</b><br>Arpit Kumar Soni</div>
+        </div>
+        <div class="row">
+          <div><b>ऑपरेशन्स</b><br>Infra & Support</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h2>हमारे साझेदार (Partners)</h2>
+      <div class="list">
+        <div class="row">
+          <img src="https://via.placeholder.com/60.png?text=Govt" alt="Government">
+          <div>पर्यटन/धार्मिक विभाग, म.प्र. शासन</div>
+        </div>
+        <div class="row">
+          <img src="https://via.placeholder.com/60.png?text=UMC" alt="UMC">
+          <div>उज्जैन नगर निगम / जिला प्रशासन</div>
+        </div>
+        <div class="row">
+          <img src="https://via.placeholder.com/60.png?text=IT" alt="IT partner">
+          <div>आईटी/इन्फ्रा सहयोगी</div>
+        </div>
+        <div class="row">
+          <img src="https://via.placeholder.com/60.png?text=NGO" alt="NGO">
+          <div>स्वयंसेवी संस्थाएँ (सेवा/स्वास्थ्य/स्वच्छता)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h2>संपर्क/प्रतिक्रिया (Contact & Feedback)</h2>
+      <div class="note">
+        <div class="links">
+          ईमेल: <a href="nageshwerpatidar911@gmail.com">nageshwerpatidar911@gmail.com</a> |
+          फोन: <a href="tel:+919303715944">+91-93037-15944</a>
+        </div>
+        <div class="links" style="margin-top:6px">
+          सोशल: <a href="#" target="_blank">Facebook</a>
+          <a href="#" target="_blank">Twitter</a>
+          <a href="#" target="_blank">Instagram</a>
+        </div>
+        <p style="margin-top:8px" class="muted">
+          * वेबसाइट पर प्रकाशित सूचनाएँ समय-समय पर अद्यतन की जाती हैं। कृपया आधिकारिक आदेश/सूचना-पत्र को प्राथमिक मानें।
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div>© 2025 सिंहस्थ 2028 पोर्टल</div>
+    <div><a href="#">Disclaimer</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms</a></div>
+  </footer>
+
+  <!-- Chatbot button -->
+  <div id="chatbot-button" onclick="toggleChat()">🤖 सहायक</div>
+
+  <!-- Inline helpers (same as mahakal) -->
+  <script>
+    function toggleMenu(){
+      const m = document.getElementById('menu');
+      if(!m) return;
+      m.classList.toggle('showing');
+    }
+    function toggleNotif(){
+      const box = document.getElementById('notif-box');
+      if(!box) return;
+      const isHidden = box.getAttribute('aria-hidden') === 'true';
+      box.style.display = isHidden ? 'block' : 'none';
+      box.setAttribute('aria-hidden', (!isHidden).toString());
+    }
+    function toggleChat(){ alert('Chat toggle (demo)'); }
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') { document.getElementById('menu')?.classList.remove('showing'); }});
+  </script>
+
+  <!-- site-wide JS (if you keep a shared script.js) -->
+  <script src="script.js"></script>
+</body>
+</html>

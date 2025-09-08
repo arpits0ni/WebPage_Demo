@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Booking - सिंहस्थ 2028</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .booking-box{max-width:900px;margin:20px auto;background:#fffde7;padding:20px;border-radius:8px;}
+    .btn{background:#f57f17;color:white;border:none;padding:8px 15px;border-radius:5px;cursor:pointer;}
+    table{width:100%;border-collapse:collapse;margin-top:10px;}
+    th,td{border:1px solid #ccc;padding:10px;text-align:center;}
+    th{background:#f57f17;color:white;}
+  </style>
+</head>
+<body>
+<!-- Header -->
+<div class="top-banner">
+    <div class="top-left"><img src="file:///C:\Users\HP\Desktop\New Work\simhasth web\logo\logo.jpeg" alt = 'Logo'><span>सिंहस्थ 2028</span></div>
+  <div class="top-right">
+    <span onclick="toggleNotif()">🔔</span>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+  </div>
+  <div id="notif-box">
+    <p>⚠️ रामघाट क्षेत्र में भीड़ अधिक है।</p>
+    <p>ℹ️ महाकाल मंदिर VIP दर्शन 2 बजे।</p>
+    <p>✅ मंगलनाथ मार्ग खुला है।</p>
+  </div>
+</div>
+
+<!-- Notification -->
+<div class="notif-bar"><marquee>⚠️ रामघाट भीड़ | ℹ️ महाकाल VIP दर्शन 2 बजे | ✅ मंगलनाथ मार्ग खुला | 🚫 पार्किंग निषेध</marquee></div>
+
+<!-- Menu -->
+<nav>
+  <span class="menu-toggle" onclick="toggleMenu()">☰ मेनू</span>
+  <ul id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-sub"><a href="#">मंदिर जानकारी</a>
+      <ul>
+        <li><a href="mahakal.html">महाकाल</a></li>
+        <li><a href="harsiddhi.html">हरसिद्धि</a></li>
+        <li><a href="kalbhairav.html">काल भैरव</a></li>
+        <li><a href="mangalnath.html">मंगलनाथ</a></li>
+      </ul>
+    </li>
+    <li class="has-sub"><a href="#">लाइव दर्शन</a>
+      <ul>
+        <li><a href="mahakal-live.html">महाकाल लाइव</a></li>
+        <li><a href="harsiddhi-live.html">हरसिद्धि लाइव</a></li>
+        <li><a href="mangalnath-live.html">मंगलनाथ लाइव</a></li>
+      </ul>
+    </li>
+    <li><a href="lost-found.html">Lost & Found</a></li>
+   <li class="has-sub"><a href="#">Booking</a>
+     <ul>
+      <li><a href="train-booking.html">ट्रेन</a></li>
+      <li><a href="bus-booking.html">बस</a></li>
+      <li><a href="hotel-booking.html">होटल</a></li>
+      <li><a href="food-booking.html">फूड</a></li>
+      <li><a href="ride-booking.html">राइड</a></li>
+     </ul>
+   </li>
+
+    <li class="has-sub"><a href="#">मेला क्षेत्र</a>
+      <ul>
+        <li><a href="mela-mahakal.html">महाकाल मंदिर</a></li>
+        <li><a href="mela-ramghat.html">रामघाट</a></li>
+        <li><a href="mela-mangalnath.html">मंगलनाथ</a></li>
+      </ul>
+    </li>
+    <li><a href="teerth-mp.html">मध्य प्रदेश के प्रसिद्ध तीर्थ</a></li>
+    <li><a href="dharoher-mp.html">मध्य प्रदेश की ऐतिहासिक धरोहर</a></li>
+    <li><a href="emergency.html">Emergency</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+<div class="section booking-box">
+  <h2>🍴 फूड बुकिंग</h2>
+  <table>
+    <tr><th>डिश</th><th>प्राइस</th><th>बुक</th></tr>
+    <tr><td>थाली</td><td>₹120</td><td><button class="btn" onclick="bookFood('थाली')">बुक</button></td></tr>
+    <tr><td>पूड़ी-सब्ज़ी</td><td>₹80</td><td><button class="btn" onclick="bookFood('पूड़ी-सब्ज़ी')">बुक</button></td></tr>
+    <tr><td>खिचड़ी</td><td>₹100</td><td><button class="btn" onclick="bookFood('खिचड़ी')">बुक</button></td></tr>
+  </table>
+</div>
+<script>
+function toggleMenu(){
+  const m = document.getElementById('menu');
+  if(!m) return;
+  m.classList.toggle('showing');
+}
+function toggleNotif(){
+  const box = document.getElementById('notif-box');
+  if(!box) return;
+  const isHidden = box.getAttribute('aria-hidden') === 'true';
+  box.style.display = isHidden ? 'block' : 'none';
+  box.setAttribute('aria-hidden', (!isHidden).toString());
+}
+function toggleChat(){ alert('Chat toggle (demo)'); }
+document.addEventListener('keydown', e => { if(e.key === 'Escape') { document.getElementById('menu')?.classList.remove('showing'); }});
+
+function bookFood(item){ alert("✅ "+item+" बुकिंग सफल (डमी API)"); }
+
+</script>
+</body>
+</html>
