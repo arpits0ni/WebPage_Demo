@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Train Booking - सिंहस्थ 2028</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .booking-box { max-width:900px; margin:20px auto; background:#fffde7; padding:20px; border-radius:8px; border:1px solid #ccc; }
+    .booking-box h2 { text-align:center; margin-bottom:20px; }
+    .form-row { display:flex; gap:15px; margin-bottom:15px; }
+    .form-row div { flex:1; }
+    .form-row label { font-weight:600; }
+    .form-row input, .form-row select { width:100%; padding:8px; border:1px solid #ccc; border-radius:6px; }
+    .btn { background:#f57f17; color:white; border:none; padding:8px 15px; border-radius:5px; cursor:pointer; }
+    .btn:hover { background:#ef6c00; }
+    .result { margin-top:20px; }
+    table { width:100%; border-collapse:collapse; margin-top:10px; }
+    table, th, td { border:1px solid #ccc; }
+    th, td { padding:10px; text-align:center; }
+    th { background:#f57f17; color:white; }
+    .modal { display:none; position:fixed; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:1000; }
+    .modal-content { background:#fff; padding:20px; border-radius:8px; width:400px; }
+    .close-btn { float:right; cursor:pointer; color:red; font-size:20px; }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="top-banner">
+  <div class="top-left"><img src="file:///C:\Users\HP\Desktop\New Work\simhasth web\logo\logo.jpeg"><span>सिंहस्थ 2028</span></div>
+  <div class="top-right">
+    <span onclick="toggleNotif()">🔔</span>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+  </div>
+  <div id="notif-box">
+    <p>⚠️ रामघाट क्षेत्र में भीड़ अधिक है।</p>
+    <p>ℹ️ महाकाल मंदिर VIP दर्शन 2 बजे।</p>
+    <p>✅ मंगलनाथ मार्ग खुला है।</p>
+  </div>
+</div>
+
+<!-- Notification -->
+<div class="notif-bar"><marquee>⚠️ रामघाट भीड़ | ℹ️ महाकाल VIP दर्शन 2 बजे | ✅ मंगलनाथ मार्ग खुला | 🚫 पार्किंग निषेध</marquee></div>
+
+<!-- Menu -->
+<nav>
+  <span class="menu-toggle" onclick="toggleMenu()">☰ मेनू</span>
+  <ul id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-sub"><a href="#">मंदिर जानकारी</a>
+      <ul>
+        <li><a href="mahakal.html">महाकाल</a></li>
+        <li><a href="harsiddhi.html">हरसिद्धि</a></li>
+        <li><a href="kalbhairav.html">काल भैरव</a></li>
+        <li><a href="mangalnath.html">मंगलनाथ</a></li>
+      </ul>
+    </li>
+    <li class="has-sub"><a href="#">लाइव दर्शन</a>
+      <ul>
+        <li><a href="mahakal-live.html">महाकाल लाइव</a></li>
+        <li><a href="harsiddhi-live.html">हरसिद्धि लाइव</a></li>
+        <li><a href="mangalnath-live.html">मंगलनाथ लाइव</a></li>
+      </ul>
+    </li>
+    <li><a href="lost-found.html">Lost & Found</a></li>
+    <li class="has-sub"><a href="#">Booking</a>
+      <ul>
+        <li><a href="train-booking.html">ट्रेन</a></li>
+        <li><a href="bus-booking.html">बस</a></li>
+        <li><a href="hotel-booking.html">होटल</a></li>
+        <li><a href="food-booking.html">फूड</a></li>
+        <li><a href="ride-booking.html">राइड</a></li>
+      </ul>
+    </li>
+    <li class="has-sub"><a href="#">मेला क्षेत्र</a>
+      <ul>
+        <li><a href="mela-mahakal.html">महाकाल मंदिर</a></li>
+        <li><a href="mela-ramghat.html">रामघाट</a></li>
+        <li><a href="mela-mangalnath.html">मंगलनाथ</a></li>
+      </ul>
+    </li>
+    <li><a href="teerth-mp.html">मध्य प्रदेश के प्रसिद्ध तीर्थ</a></li>
+    <li><a href="dharoher-mp.html">मध्य प्रदेश की ऐतिहासिक धरोहर</a></li>
+    <li><a href="emergency.html">Emergency</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+<!-- Booking Section -->
+<div class="section booking-box">
+  <h2>🚆 ट्रेन बुकिंग</h2>
+  <div class="form-row">
+    <div>
+      <label>From Station</label>
+      <input type="text" id="fromStation" placeholder="Ujjain">
+    </div>
+    <div>
+      <label>To Station</label>
+      <input type="text" id="toStation" placeholder="Indore">
+    </div>
+  </div>
+  <div class="form-row">
+    <div>
+      <label>Date</label>
+      <input type="date" id="journeyDate">
+    </div>
+    <div>
+      <label>Class</label>
+      <select id="trainClass">
+        <option value="SL">Sleeper (SL)</option>
+        <option value="3A">AC 3 Tier (3A)</option>
+        <option value="2A">AC 2 Tier (2A)</option>
+        <option value="CC">Chair Car (CC)</option>
+      </select>
+    </div>
+    <div>
+      <label>Quota</label>
+      <select id="quota">
+        <option value="General">General</option>
+        <option value="Tatkal">Tatkal</option>
+      </select>
+    </div>
+  </div>
+  <button class="btn" onclick="searchTrains()">🔍 सर्च करें</button>
+
+  <div class="result" id="trainResults"></div>
+</div>
+
+<!-- Booking Modal -->
+<div class="modal" id="bookingModal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">❌</span>
+    <h3>🚆 ट्रेन बुकिंग फॉर्म</h3>
+    <label>यात्री का नाम:</label><input type="text" id="pName" style="width:100%;margin-bottom:10px;">
+    <label>उम्र:</label><input type="number" id="pAge" style="width:100%;margin-bottom:10px;">
+    <label>लिंग:</label>
+    <select id="pGender" style="width:100%;margin-bottom:10px;">
+      <option>पुरुष</option><option>महिला</option><option>अन्य</option>
+    </select>
+    <label>मोबाइल:</label><input type="text" id="pMobile" style="width:100%;margin-bottom:10px;">
+    <button class="btn" onclick="confirmBooking()">✅ बुक करें</button>
+  </div>
+</div>
+
+<script>
+
+function toggleMenu(){
+  const m = document.getElementById('menu');
+  if(!m) return;
+  m.classList.toggle('showing');
+}
+function toggleNotif(){
+  const box = document.getElementById('notif-box');
+  if(!box) return;
+  const isHidden = box.getAttribute('aria-hidden') === 'true';
+  box.style.display = isHidden ? 'block' : 'none';
+  box.setAttribute('aria-hidden', (!isHidden).toString());
+}
+function toggleChat(){ alert('Chat toggle (demo)'); }
+document.addEventListener('keydown', e => { if(e.key === 'Escape') { document.getElementById('menu')?.classList.remove('showing'); }});
+
+
+const dummyTrains = [
+  {no:"22901", name:"Intercity Express", from:"ujjain", to:"indore", dep:"08:00", arr:"09:30", dur:"1h 30m", class:"SL", fare:120},
+  {no:"22902", name:"Avantika Express", from:"ujjain", to:"mumbai", dep:"19:00", arr:"07:00", dur:"12h", class:"2A", fare:950},
+  {no:"19324", name:"Indore Express", from:"indore", to:"ujjain", dep:"10:00", arr:"11:00", dur:"1h", class:"CC", fare:150},
+  {no:"22192", name:"Jabalpur Express", from:"ujjain", to:"bhopal", dep:"06:00", arr:"10:30", dur:"4h 30m", class:"3A", fare:600}
+];
+
+function searchTrains(){
+  const from = document.getElementById("fromStation").value.toLowerCase();
+  const to = document.getElementById("toStation").value.toLowerCase();
+  const cls = document.getElementById("trainClass").value;
+
+  const results = dummyTrains.filter(t => 
+    t.from.includes(from) && t.to.includes(to) && t.class === cls
+  );
+
+  let html = "";
+  if(results.length > 0){
+    html += `<table><tr><th>No</th><th>नाम</th><th>प्रस्थान</th><th>आगमन</th><th>समय</th><th>किराया</th><th>बुक</th></tr>`;
+    results.forEach(t=>{
+      html += `<tr>
+        <td>${t.no}</td>
+        <td>${t.name}</td>
+        <td>${t.dep}</td>
+        <td>${t.arr}</td>
+        <td>${t.dur}</td>
+        <td>₹${t.fare}</td>
+        <td><button class="btn" onclick="openBooking('${t.no}','${t.name}')">बुक</button></td>
+      </tr>`;
+    });
+    html += `</table>`;
+  } else {
+    html = "<p>❌ कोई ट्रेन उपलब्ध नहीं है</p>";
+  }
+
+  document.getElementById("trainResults").innerHTML = html;
+}
+
+function openBooking(no, name){
+  document.getElementById("bookingModal").style.display="flex";
+}
+
+function closeModal(){
+  document.getElementById("bookingModal").style.display="none";
+}
+
+function confirmBooking(){
+  alert("✅ आपकी बुकिंग सफल रही (डमी API)");
+  closeModal();
+}
+</script>
+
+</body>
+</html>

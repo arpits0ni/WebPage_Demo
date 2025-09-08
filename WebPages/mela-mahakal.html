@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>मेला क्षेत्र – महाकाल क्षेत्र</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .tbl { width:100%; border-collapse:collapse; margin:10px 0; }
+    .tbl th, .tbl td { border:1px solid #ccc; padding:8px; text-align:left; }
+    .tbl th { background:#f57f17; color:#fff; }
+    .chips { display:flex; gap:8px; flex-wrap:wrap; }
+    .chip { background:#fff3cd; border:1px solid #f57f17; border-radius:20px; padding:6px 10px; font-size:13px; }
+    .map-wrap iframe { width:100%; height:340px; border:none; border-radius:8px; }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="top-banner">
+  <div class="top-left"><img src="file:///C:\Users\HP\Desktop\New Work\simhasth web\logo\logo.jpeg"><span>सिंहस्थ 2028</span></div>
+  <div class="top-right"><span onclick="toggleNotif()">🔔</span>    <a href="login.html">Login</a>
+    <a href="register.html">Register</a></div>
+  <div id="notif-box"><p>ℹ️ महाकाल क्षेत्र यातायात परिवर्तित।</p></div>
+</div>
+<div class="notif-bar"><marquee>महाकाल क्षेत्र: भीड़ नियंत्रण हेतु वैकल्पिक मार्ग अपनाएँ</marquee></div>
+
+<!-- Menu -->
+<nav>
+  <span class="menu-toggle" onclick="toggleMenu()">☰ मेनू</span>
+  <ul id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-sub"><a href="#">मंदिर जानकारी</a>
+      <ul>
+        <li><a href="mahakal.html">महाकाल</a></li>
+        <li><a href="harsiddhi.html">हरसिद्धि</a></li>
+        <li><a href="kalbhairav.html">काल भैरव</a></li>
+        <li><a href="mangalnath.html">मंगलनाथ</a></li>
+      </ul>
+    </li>
+    <li class="has-sub"><a href="#">लाइव दर्शन</a>
+      <ul>
+        <li><a href="mahakal-live.html">महाकाल लाइव</a></li>
+        <li><a href="harsiddhi-live.html">हरसिद्धि लाइव</a></li>
+        <li><a href="mangalnath-live.html">मंगलनाथ लाइव</a></li>
+      </ul>
+    </li>
+    <li><a href="lost-found.html">Lost & Found</a></li>
+    <li class="has-sub"><a href="#">Booking</a>
+      <ul>
+        <li><a href="train-booking.html">ट्रेन</a></li>
+        <li><a href="bus-booking.html">बस</a></li>
+        <li><a href="hotel-booking.html">होटल</a></li>
+        <li><a href="food-booking.html">फूड</a></li>
+        <li><a href="ride-booking.html">राइड</a></li>
+      </ul>
+    </li>
+    <li class="has-sub"><a href="#">मेला क्षेत्र</a>
+      <ul>
+        <li><a href="mela-mahakal.html">महाकाल मंदिर</a></li>
+        <li><a href="mela-ramghat.html">रामघाट</a></li>
+        <li><a href="mela-mangalnath.html">मंगलनाथ</a></li>
+      </ul>
+    </li>
+    <li><a href="teerth-mp.html">मध्य प्रदेश के प्रसिद्ध तीर्थ</a></li>
+    <li><a href="dharoher-mp.html">मध्य प्रदेश की ऐतिहासिक धरोहर</a></li>
+    <li><a href="emergency.html">Emergency</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+<!-- Hero -->
+<div class="hero" style="background:url('https://via.placeholder.com/1200x300.png?text=Mahakal+Mela+Zone') center/cover no-repeat;"></div>
+
+<!-- Content -->
+<div class="section">
+  <h2>महाकाल क्षेत्र – सारांश</h2>
+  <div class="info-box">
+    <p><b>सीमा (Boundary):</b> रूद्रसागर से हरसिद्धि चौराहा तक, रामघाट अप्रोच रोड से कोतवाली क्षेत्र तक।</p>
+    <p><b>कुल क्षेत्रफल (Approx.):</b> 2.8 किमी²</p>
+    <p><b>प्रमुख प्रवेश द्वार:</b> टॉवर चौक गेट, हरसिद्धि गेट, रूद्रसागर बैरियर</p>
+    <div class="chips">
+      <span class="chip">VIP मार्ग</span><span class="chip">दर्शन कतार</span><span class="chip">आपात मार्ग</span><span class="chip">पार्किंग P-1/P-2</span>
+    </div>
+  </div>
+
+  <h2>मुख्य पंडाल</h2>
+  <div class="info-box">
+    <ul>
+      <li>महाकाल मुख्य पंडाल (दर्शन/भस्म-आरती सूचना केंद्र)</li>
+      <li>सुरक्षा नियंत्रण कक्ष पंडाल</li>
+      <li>सेवा शिविर पंडाल (जल/भोजन/चिकित्सा)</li>
+    </ul>
+  </div>
+
+  <h2>अखाड़े एवं पीठाधीश/समिति</h2>
+  <div class="info-box">
+    <table class="tbl">
+      <tr><th>अखाड़ा</th><th>पंडाल स्थान</th><th>पीठाधीश/गुरु/समिति</th></tr>
+      <tr><td>जूना अखाड़ा</td><td>हरसिद्धि रोड T-1</td><td>— (अपडेट करें)</td></tr>
+      <tr><td>निर्मोही अखाड़ा</td><td>रूद्रसागर T-2</td><td>— (अपडेट करें)</td></tr>
+      <tr><td>अवधूता/आनन्द अखाड़ा</td><td>महाकाल परिक्रमा T-3</td><td>— (अपडेट करें)</td></tr>
+    </table>
+    <p style="font-size:13px;color:#666;">* उपरोक्त नाम/स्थान डमी हैं—कृपया आधिकारिक सूची से अपडेट करें।</p>
+  </div>
+
+  <h2>सुविधाएँ</h2>
+  <div class="info-box">
+    <ul>
+      <li>पीने का पानी/मूविंग वाटर टैंकर</li>
+      <li>स्वास्थ्य शिविर/एंबुलेंस स्टैंडबाय</li>
+      <li>लॉस्ट-एंड-फाउंड काउंटर</li>
+      <li>मोबाइल शौचालय/स्वच्छता दल</li>
+      <li>पुलिस सहायता कक्ष/घोषणा तंत्र</li>
+    </ul>
+  </div>
+
+  <h2>आपातकालीन संपर्क</h2>
+  <div class="info-box">
+    <p><b>पुलिस कंट्रोल:</b> 100 / 112 | <b>अस्पताल हेल्पडेस्क:</b> +91-XXXXXXXXXX</p>
+    <p><b>मेला कंट्रोल रूम:</b> +91-XXXXXXXXXX | <b>फायर:</b> 101</p>
+  </div>
+
+  <h2>मानचित्र</h2>
+  <div class="info-box map-wrap">
+    <iframe src="https://maps.google.com/maps?q=Mahakal%20Temple%20Ujjain&output=embed"></iframe>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div>© 2025 सिंहस्थ 2028 पोर्टल</div>
+  <div><a href="#">Disclaimer</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms</a></div>
+</footer>
+
+<!-- Chatbot -->
+<div id="chatbot-button" onclick="toggleChat()">🤖 सहायक</div>
+<div id="chatbot-box">
+  <div id="chat-header">सहायक <span onclick="toggleChat()" style="cursor:pointer;">❌</span></div>
+  <div id="chat-body"><div class="bot">🙏 नमस्ते! मैं आपकी कैसे मदद कर सकता हूँ?</div></div>
+  <div id="chat-input"><input type="text" id="userInput" placeholder="संदेश लिखें..." onkeydown="if(event.key==='Enter'){sendMessage()}"><button onclick="sendMessage()">➡️</button></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

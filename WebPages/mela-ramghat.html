@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>मेला क्षेत्र – रामघाट क्षेत्र</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .tbl { width:100%; border-collapse:collapse; margin:10px 0; }
+    .tbl th, .tbl td { border:1px solid #ccc; padding:8px; text-align:left; }
+    .tbl th { background:#f57f17; color:#fff; }
+    .chips { display:flex; gap:8px; flex-wrap:wrap; }
+    .chip { background:#fff3cd; border:1px solid #f57f17; border-radius:20px; padding:6px 10px; font-size:13px; }
+    .map-wrap iframe { width:100%; height:340px; border:none; border-radius:8px; }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="top-banner">
+  <div class="top-left"><img src="file:///C:\Users\HP\Desktop\New Work\simhasth web\logo\logo.jpeg"><span>सिंहस्थ 2028</span></div>
+  <div class="top-right"><span onclick="toggleNotif()">🔔</span>    <a href="login.html">Login</a>
+    <a href="register.html">Register</a></div>
+  <div id="notif-box"><p>ℹ️ महाकाल क्षेत्र यातायात परिवर्तित।</p></div>
+</div>
+<div class="notif-bar"><marquee>महाकाल क्षेत्र: भीड़ नियंत्रण हेतु वैकल्पिक मार्ग अपनाएँ</marquee></div>
+
+<!-- Menu -->
+<nav>
+  <span class="menu-toggle" onclick="toggleMenu()">☰ मेनू</span>
+  <ul id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-sub"><a href="#">मंदिर जानकारी</a>
+      <ul>
+        <li><a href="mahakal.html">महाकाल</a></li>
+        <li><a href="harsiddhi.html">हरसिद्धि</a></li>
+        <li><a href="kalbhairav.html">काल भैरव</a></li>
+        <li><a href="mangalnath.html">मंगलनाथ</a></li>
+      </ul>
+    </li>
+    <li class="has-sub"><a href="#">लाइव दर्शन</a>
+      <ul>
+        <li><a href="mahakal-live.html">महाकाल लाइव</a></li>
+        <li><a href="harsiddhi-live.html">हरसिद्धि लाइव</a></li>
+        <li><a href="mangalnath-live.html">मंगलनाथ लाइव</a></li>
+      </ul>
+    </li>
+    <li><a href="lost-found.html">Lost & Found</a></li>
+    <li class="has-sub"><a href="#">Booking</a>
+      <ul>
+        <li><a href="train-booking.html">ट्रेन</a></li>
+        <li><a href="bus-booking.html">बस</a></li>
+        <li><a href="hotel-booking.html">होटल</a></li>
+        <li><a href="food-booking.html">फूड</a></li>
+        <li><a href="ride-booking.html">राइड</a></li>
+      </ul>
+    </li>
+    <li class="has-sub"><a href="#">मेला क्षेत्र</a>
+      <ul>
+        <li><a href="mela-mahakal.html">महाकाल मंदिर</a></li>
+        <li><a href="mela-ramghat.html">रामघाट</a></li>
+        <li><a href="mela-mangalnath.html">मंगलनाथ</a></li>
+      </ul>
+    </li>
+    <li><a href="teerth-mp.html">मध्य प्रदेश के प्रसिद्ध तीर्थ</a></li>
+    <li><a href="dharoher-mp.html">मध्य प्रदेश की ऐतिहासिक धरोहर</a></li>
+    <li><a href="emergency.html">Emergency</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+<div class="hero" style="background:url('https://via.placeholder.com/1200x300.png?text=Ramghat+Mela+Zone') center/cover no-repeat;"></div>
+
+<div class="section">
+  <h2>रामघाट क्षेत्र – सारांश</h2>
+  <div class="info-box">
+    <p><b>सीमा:</b> त्रिवेणी से रामानुजकोट तक, शिप्रा तट के दोनों किनारे चयनित सेक्टरों सहित</p>
+    <p><b>कुल क्षेत्रफल (Approx.):</b> 3.6 किमी²</p>
+    <p><b>मुख्य प्रवेश:</b> रामघाट मुख्य पुल, सिंधी कॉलोनी मार्ग, कुम्भ पुल</p>
+  </div>
+
+  <h2>मुख्य पंडाल</h2>
+  <div class="info-box">
+    <ul>
+      <li>मुख्य स्नान/दर्शन सूचना पंडाल</li>
+      <li>नदी सुरक्षा/रेस्क्यू कंट्रोल पंडाल</li>
+      <li>सेवा शिविर/लंगर पंडाल</li>
+    </ul>
+  </div>
+
+  <h2>अखाड़े एवं पीठाधीश/समिति</h2>
+  <div class="info-box">
+    <table class="tbl">
+      <tr><th>अखाड़ा</th><th>पंडाल स्थान</th><th>पीठाधीश/गुरु/समिति</th></tr>
+      <tr><td>निरंजनी अखाड़ा</td><td>रामघाट सेक्टर R-1</td><td>— (अपडेट)</td></tr>
+      <tr><td>महानिर्वाणी अखाड़ा</td><td>R-2 स्नान घाट अप्रोच</td><td>— (अपडेट)</td></tr>
+      <tr><td>अटल अखाड़ा</td><td>R-3 लंगर मार्ग</td><td>— (अपडेट)</td></tr>
+    </table>
+  </div>
+
+  <h2>सुविधाएँ</h2>
+  <div class="info-box">
+    <ul>
+      <li>नदी लाइफ-गार्ड/रेस्क्यू बोट</li>
+      <li>घोषणा/लाउडस्पीकर नेटवर्क</li>
+      <li>प्राथमिक चिकित्सा/एम्बुलेंस</li>
+      <li>भीड़ प्रबंधन बैरियर/रूट डायवर्जन</li>
+    </ul>
+  </div>
+
+  <h2>आपातकालीन संपर्क</h2>
+  <div class="info-box">
+    <p><b>नदी पुलिस/रेस्क्यू:</b> +91-XXXXXXXXXX | <b>कंट्रोल रूम:</b> +91-XXXXXXXXXX</p>
+  </div>
+
+  <h2>मानचित्र</h2>
+  <div class="info-box map-wrap">
+    <iframe src="https://maps.google.com/maps?q=Ramghat%20Ujjain&output=embed"></iframe>
+  </div>
+</div>
+
+<footer>
+  <div>© 2025 सिंहस्थ 2028 पोर्टल</div>
+  <div><a href="#">Disclaimer</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms</a></div>
+</footer>
+
+<div id="chatbot-button" onclick="toggleChat()">🤖 सहायक</div>
+<div id="chatbot-box">
+  <div id="chat-header">सहायक <span onclick="toggleChat()" style="cursor:pointer;">❌</span></div>
+  <div id="chat-body"><div class="bot">🙏 नमस्ते! मैं आपकी कैसे मदद कर सकता हूँ?</div></div>
+  <div id="chat-input"><input id="userInput" placeholder="संदेश लिखें..." onkeydown="if(event.key==='Enter'){sendMessage()}"><button onclick="sendMessage()">➡️</button></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
