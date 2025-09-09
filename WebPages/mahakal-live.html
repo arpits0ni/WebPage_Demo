@@ -5,15 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>महाकालेश्वर लाइव दर्शन - सिंहस्थ 2028</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    .modal { display:none; position:fixed; z-index:500; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; }
-    .modal-content { position:relative; background:#fffde7; border:2px solid #f57f17; border-radius:10px; padding:20px; max-width:400px; text-align:center; }
-    .modal-content h2 { color:#d84315; margin-bottom:15px; }
-    .modal-content p { margin-bottom:20px; font-weight:500; }
-    .modal-content a { display:inline-block; background:#ef6c00; color:white; padding:10px 20px; border-radius:6px; text-decoration:none; font-weight:bold; }
-    .modal-content a:hover { background:#d84315; }
-    .close-btn { position:absolute; top:10px; right:15px; font-size:20px; cursor:pointer; color:#d84315; font-weight:bold; }
-  </style>
 </head>
 <body>
 <!-- Header -->
@@ -79,19 +70,29 @@
     <li><a href="about.html">About</a></li>
   </ul>
 </nav>
-<div class="hero" style="background:url('https://via.placeholder.com/1200x300.png?text=Mahakal+Live') center/cover no-repeat;"></div>
 
-<div id="liveModal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="document.getElementById('liveModal').style.display='none'">❌</span>
-    <h2>⚠️ सूचना</h2>
-    <p>तकनीकी समस्या के कारण Live चलाने में असमर्थ हैं।<br> कृपया नीचे दिए गए लिंक से YouTube पर देखें।</p>
-    <a href="https://www.youtube.com/@mahakaleshwarujjain" target="_blank">▶️ महाकालेश्वर Live</a>
+<!-- Live Feed Section -->
+<div class="section live-video-section">
+  <h2>🔱 श्री महाकालेश्वर ज्योतिर्लिंग उज्जैन - लाइव दर्शन</h2>
+
+  <p class="live-status-note">
+    लाइव दर्शन केवल मंदिर के आरती समय पर ही उपलब्ध होता है। यदि वीडियो अनुपलब्ध दिखाई दे, तो कृपया कुछ समय बाद पुनः प्रयास करें।
+  </p>
+
+  <div class="video-container">
+    <iframe 
+      src="https://www.youtube.com/embed/N-Vq6Qbe8bE"
+      title="Live Darshan from Mahakaleshwar Temple"
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen>
+    </iframe>
   </div>
+
 </div>
 
 <footer><div>© 2025 सिंहस्थ 2028 पोर्टल</div></footer>
 <script src="script.js"></script>
-<script>window.onload=function(){document.getElementById("liveModal").style.display="flex";}</script>
+
 </body>
 </html>

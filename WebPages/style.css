@@ -1,539 +1,155 @@
-/* ======= UPDATED style.css (replace your existing file) ======= */
+/* ===================================================================
+BASE & GENERAL STYLES
+=================================================================== */
+*, *::before, *::after {box-sizing: border-box;margin: 0;padding: 0;}
+body {font-family: "Noto Sans", Arial, sans-serif;background: #fffef5;color: #222;line-height: 1.5;-webkit-font-smoothing: antialiased;}
+:root {--max-width: 1100px;}
+.section {max-width: var(--max-width);margin: 14px auto;padding: 0 0px;}
+.section h2 {background: #f57f17;color: white;padding: 8px;border-radius: 6px;text-align: center;margin-bottom: 15px;}
 
-/* RESET */
-*,
-*::before,
-*::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* ===================================================================
+HEADER, NAVIGATION & BANNERS
+=================================================================== */
+.top-banner {max-width: var(--max-width);border-radius: 6px;margin: 12px auto;font-weight: bold;background: #e65100;color: white;padding: 10px 16px;display: flex;justify-content: space-between;align-items: center;position: relative;}
+.top-left {display: flex;gap: 10px;align-items: center;}
+.top-left img {width: 50px;height: 50px;object-fit: cover;border-radius: 6px;}
+.top-right {display: flex;gap: 12px;align-items: center;font-size: 14px;}
+.top-right a {color: white;text-decoration: none;font-weight: 500;}
+.icon-btn {background: transparent;border: none;color: white;font-size: 18px;cursor: pointer;}
+#notif-box {display: none;position: absolute;right: 20px;top: 55px;background: white;color: black;border: 1px solid #ccc;padding: 10px;border-radius: 6px;width: 250px;box-shadow: 0 2px 6px rgba(0,0,0,0.2);font-size: 13px;z-index: 200;}
+#notif-box p {margin: 6px 0;}
+.notif-bar {max-width: var(--max-width);font-weight: bold;font-size: 14px;margin: 8px auto;padding: 6px 10px;background: #ff5722;color: white;border-radius: 6px;}
 
-body {font-family: "Noto Sans", Arial, sans-serif; background: #fffef5; color: #222; line-height: 1.5; -webkit-font-smoothing: antialiased;}
-
-/* max wrapper width for central layout */
-:root { --max-width: 1100px; }
-
-/* Top banner */
-.top-banner {max-width: var(--max-width); border-radius: 6px; margin: 12px auto; font-weight:bold; background: #e65100; color: white; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center;position:relative;}
-.top-left { display: flex; gap: 10px; align-items: center; }
-.top-left img { width: 50px; height:50px; object-fit:cover; border-radius:6px; }
-.top-right { display:flex; gap:12px; align-items:center;  font-size:14px;}
-.top-right a { color:white; text-decoration:none; font-weight:500; }
-.icon-btn { background: transparent; border: none; color: white; font-size: 18px; cursor:pointer; }
-#notif-box { display:none; position:absolute; right:20px; top:55px; background:white; color:black; border:1px solid #ccc; padding:10px; border-radius:6px; width:250px; box-shadow:0 2px 6px rgba(0,0,0,0.2); font-size:13px; z-index:200; }
-#notif-box p { margin:6px 0; }
-
-/* Mobile menu */
-.menu-toggle { display:none; font-size:22px; color:white; padding:10px; cursor:pointer; }
-@media(max-width:768px){
-  nav ul { display:none; flex-direction:column; }
-  nav ul.showing { display:flex; }
-  .menu-toggle { display:block; text-align:right; }
-}
-
-
-/* Notification bar */
-.notif-bar {max-width: var(--max-width); font-weight:bold; font-size:14px; margin: 8px auto; padding: 6px 10px; background: #ff5722; color: white; border-radius: 6px;}
-.notif-bar marquee { font-size:14px;}
-
-/* Quotes Carousel */
-.quotes-carousel { position:relative; height:150px; overflow:hidden; background:#fff3cd; border:2px solid #ccc; border-radius:6px; display:flex; align-items:center; justify-content:center; text-align:center; font-size:16px; font-weight:500; padding:15px; }
-.quote-slide { display:none; }
-.quote-slide.active { display:block; }
-
-
-/* MOBILE: collapse nav by default and show only when .showing is present */
-.menu-toggle {display: none; background: transparent; border: none; color: white; font-size: 20px; padding: 6px 8px; cursor: pointer;}
-
-/* Desktop/general */
-nav {max-width: var(--max-width); margin: 12px auto; background: #f57f17; border-radius: 6px; padding:0 15px;}
-nav a { display:block; color: white; text-decoration: none; padding: 8px 10px; font-weight:600; font-size:14px;}
-nav a:hover { background:#ef6c00; }
-nav li.has-sub > a:after { content: " ▼"; font-size: 11px; }
-nav li ul { display:none; position:absolute; background:#fff3cd; margin-top:6px; border:1px solid #000000; border-radius:6px; padding:8px; border-radius:6px; box-shadow:0 2px 6px rgba(0,0,0,0.12);}
-nav li ul li a { color:#000; }
-nav li:hover ul { display:block; }
-nav li ul li a:hover { background:#ffe082; }
-nav ul {list-style: none; display: flex; gap: 10px; flex-wrap: wrap; align-items: center;}
-
-
-/* === Dropdown hover stability fixes === */
-nav {max-width: var(--max-width); margin: 12px auto; background: #f57f17; border-radius: 6px; padding:0 15px;}
-nav a { display:block; color: white; text-decoration: none; padding: 8px 10px; font-weight:600; font-size:14px;}
-nav a:hover { background:#ef6c00; }
-nav li.has-sub > a:after { content: " ▼"; font-size: 11px; }
-nav li ul { display:none; position:absolute; background:#fff3cd; margin-top:6px; border:1px solid #000000; border-radius:6px; padding:8px; border-radius:6px; box-shadow:0 2px 6px rgba(0,0,0,0.12);}
-nav li ul li a { color:#000; }
-nav li:hover ul { display:block; }
+/* --- Navigation --- */
+nav {max-width: var(--max-width);margin: 12px auto;background: #f57f17;border-radius: 6px;padding: 0 15px;}
+nav ul {list-style: none;display: flex;gap: 10px;flex-wrap: wrap;align-items: center;overflow: visible;}
 nav li {position: relative;}
-nav li > ul {display: none; position: absolute; top: 100%; left: 0; margin: 0; padding: 6px 0; min-width: 180px; z-index: 9999; box-shadow: 0 6px 18px rgba(0,0,0,0.12); border-radius: 6px; background: #fff; pointer-events: auto; /* top: calc(100% - 1px); */}
-nav li:hover > ul,
-nav li.open > ul {display: block;}
-nav > ul > li > a,
-nav li > a {display: block; padding: 8px 12px; white-space: nowrap;}
-nav li > ul > li > a {display: block; padding: 8px 12px; color: inherit;text-decoration: none;}
-nav, nav > ul {overflow: visible;}
-@media (max-width: 768px) {nav li > ul { position: static; box-shadow: none; padding-left: 12px; }
-nav li.open > ul { display: block; }}
+nav a {display: block;color: white;text-decoration: none;padding: 8px 10px;font-weight: 600;font-size: 14px;white-space: nowrap;}
+nav a:hover {background: #ef6c00;}
+nav li.has-sub > a:after {content: " ▼";font-size: 11px;}
+nav li ul {display: none;position: absolute;top: 100%;left: 0;background: #fff3cd;border-radius: 6px;box-shadow: 0 2px 6px rgba(0,0,0,0.12);padding: 8px;min-width: 180px;z-index: 9999;}
+nav li:hover > ul {display: block;}
+nav li ul li a {color: #000;}
+nav li ul li a:hover {background: #ffe082;}
+.menu-toggle {display: none;background: transparent;border: none;color: white;font-size: 22px;padding: 10px;cursor: pointer;}
 
-@media (max-width: 768px) {
-.menu-toggle { display: inline-block; }
-nav ul {display: none; flex-direction: column; gap: 6px; padding: 10px; margin: 8px 0 0 0; background: #f57f17; border-radius: 6px; width: 100%; box-shadow: 0 2px 6px rgba(0,0,0,0.08);}
-nav ul.showing {display: flex; }
-nav li ul {position: static; display: none; margin: 6px 0 0 0; padding: 8px; background: #fff3cd; border-radius: 6px; box-shadow: none;}
-nav li.open > ul {display: block;}
-nav a { padding: 10px 12px; width: 100%; box-sizing: border-box; }
-}
-
-
-/* Main section wrapper */
-.section {max-width: var(--max-width); margin: 14px auto; padding: 0 12px;}
-
-/* Crowd Tabs */
-.tab-buttons { display:flex; gap:10px; margin-bottom:15px; justify-content:center; flex-wrap:wrap; }
-.tab-buttons button { padding:8px 15px; border:none; background:#f57f17; color:white; font-weight:600; border-radius:6px; cursor:pointer; }
-.tab-buttons button:hover { background:#ef6c00; }
-.crowd-tab { display:none; background:#fffde7; border:2px solid #ccc; border-radius:6px; padding:15px; }
-.crowd-tab.active { display:block; }
+/* ===================================================================
+HERO SECTION & QUOTES
+=================================================================== */
+.hero {max-width: var(--max-width);margin: 10px auto;border-radius: 8px;overflow: hidden;background-color: #f0f0f0;}
+.hero .hero-img {display: block; width: 100%; height: auto; max-height: 400px; object-fit: contain; }
+.quotes-carousel {position: relative;height: 150px;overflow: hidden;background: #fff3cd;border: 2px solid #ccc;border-radius: 6px;display: flex;align-items: center;justify-content: center;text-align: center;font-size: 16px;font-weight: 500;padding: 15px;}
+.quote-slide { display: none; }
+.quote-slide.active { display: block; }
 
 
+/* ===================================================================
+WIDGETS & COMPONENTS (Tabs, Tables, Forms, etc.)
+=================================================================== */
 
-/* Existing styles... */
+/* --- Tabbed Content --- */
+.tab-buttons {display: flex;gap: 10px;margin-bottom: 15px;justify-content: center;flex-wrap: wrap;}
+.tab-buttons button {padding: 8px 15px;border: none;background: #f57f17;color: white;font-weight: 600;border-radius: 6px;cursor: pointer;transition: background-color 0.2s;}
+.tab-buttons button:hover {background: #ef6c00;}
+.crowd-tab {display: none;background: #fffde7;border: 2px solid #ccc;border-radius: 6px;padding: 15px;}
+.crowd-tab.active {display: block;}
+#countTab table {margin: 0 auto;width: auto;min-width: 300px;}
 
-/* --- ADD / MODIFY THESE STYLES --- */
+/* --- Info Boxes & Lists --- */
+.info-boxes {display: flex;gap: 20px;flex-wrap: wrap;}
+.info-box {flex: 1;min-width: 250px;background: #fffde7;border: 2px solid #ccc;border-radius: 6px;padding: 15px;margin: 10px 0;}
 
-/* Crowd Table Centering */
-#countTab table {
-  margin-left: auto;
-  margin-right: auto;
-  width: auto; /* Allow table to size to content, or set a max-width */
-  min-width: 300px; /* Ensure it's not too small */
-}
-
-/* Reduced space below map/graph */
-#mapTab, #graphTab {
-    padding-bottom: 10px; /* Reduced from default padding */
-    margin-bottom: 0;
-}
-
-/* Heatmap Legend (Infrared Colors) */
-.legend i {
-  /* Updated for infrared-like colors */
-  border: 1px solid #777; /* So light colors have a border */
-}
-.legend div:nth-child(2) i { /* Low */
-  background: #333333; /* Darker, almost black */
-}
-.legend div:nth-child(3) i { /* Medium */
-  background: #f57f17; /* Yellow/Orange */
-}
-.legend div:nth-child(4) i { /* High */
-  background: #ff0000; /* Red */
-}
-
-
-/* Graph Tab Styles */
-.graph-controls {
-    margin-bottom: 15px;
-    text-align: center;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.graph-controls label {
-    font-weight: bold;
-    margin-right: 10px;
-    color: #333;
-}
-
-.graph-controls select {
-    padding: 8px 12px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-    cursor: pointer;
-    background-color: #fff;
-    outline: none;
-    transition: border-color 0.2s;
-}
-
-.graph-controls select:focus {
-    border-color: #f57f17;
-    box-shadow: 0 0 0 2px rgba(245, 127, 23, 0.2);
-}
-
-.graph-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    margin-top: 10px;
-    position: relative; /* Needed for chart.js tooltip positioning */
-}
-
-/* Make sure canvas fills its container */
-#crowdLineChart {
-    width: 100% !important;
-    height: 400px !important; /* Set a specific height */
-}
-
-/* Existing timeline controls... */
-
-
-
-/* Section Headings */
-.section { padding:2px; max-width:1100px; margin:auto; }
-.section h2 { background:#f57f17; color:white; padding:8px; border-radius:6px; text-align:center; margin-bottom:15px; }
-
-/* Info Boxes Scroll
-.info-boxes: Create two box
-.info-box: Convert them horizontal */
-.info-boxes { display:flex; gap:20px; flex-wrap:wrap; }
-.info-box { flex:1; min-width:250px; background:#fffde7; border:2px solid #ccc; border-radius:6px; padding:15px; overflow:hidden; clear: both; margin: 10px 0;}
-
-/* Scroll list container */
-.scroll-list {height: 140px; overflow: hidden; position: relative; margin-top: 10px; border-radius: 6px; background: #fffdf0;}
-.scroll-list .scroll-list-content {display: flex; flex-direction: column; gap: 10px; animation: scroll-vertical var(--scroll-duration, 5s) linear infinite;}
-.scroll-list .scroll-item {padding: 6px 10px; font-size: 14px; color: #333; background: transparent;}
+/* FIX: Added back the scroll list animation */
+.scroll-list {height: 140px; overflow: hidden; position: relative; margin-top: 10px; border-radius: 6px; }
+.scroll-list .scroll-list-content {display: flex; flex-direction: column; padding-left: 20px; gap: 10px; animation: scroll-vertical 10s linear infinite;}
 @keyframes scroll-vertical {
-  0%   { transform: translateY(0); }
-  100% { transform: translateY(-50%); }}
-.scroll-list:hover .scroll-list-content,
-.scroll-list:focus .scroll-list-content,
-.scroll-list:focus-within .scroll-list-content {animation-play-state: paused;}
-
-
-/* ===== GALLERY (responsive, no overlap) ===== */
-.gallery {display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; align-items: flex-start; margin-bottom: 12px; }
-.gallery .media-card {flex: 1 1 300px; max-width: 100%; background: #000; border-radius: 10px; padding: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); display: flex; flex-direction: column; align-items: center;}
-.gallery .media-card img,
-.gallery .media-card video {width: 100%; height: auto; max-height: 320px; object-fit: contain; border-radius: 6px; background: #000; display:block;}
-.gallery .media-card .caption { margin-top: 8px; color: #fff; font-size: 0.95rem; text-align: center;}
-
-
-/* Hero 
-.index-page .hero {max-width: var(--max-width); margin: 10px auto; height: 220px; border-radius: 8px; overflow: hidden; 
-background: url('https://via.placeholder.com/1200x300.png?text=Mahakaleshwar+Temple') center/cover no-repeat;} */
-
-.hero {display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; align-items: flex-start; margin-bottom: 12px; }
-.hero .media-card {flex: 1 1 300px; max-width: 100%; background: #000; border-radius: 10px; padding: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); display: flex; flex-direction: column; align-items: center;}
-.hero .media-card img,
-.hero .media-card video {width: 100%; height: auto; max-height: 320px; object-fit: contain; border-radius: 6px; background: #000; display:block;}
-.hero .media-card .caption { margin-top: 8px; color: #fff; font-size: 0.95rem; text-align: center;}
-
-/* Downloads & Links */
-.downloads, .links { background:#fffde7; border:2px solid #ccc; border-radius:6px; padding:15px; margin:10px 0; }
-.downloads a, .links a { display:block; margin:6px 0; color:#1565c0; text-decoration:none; font-weight:500; }
-.downloads a:hover, .links a:hover { text-decoration:underline; }
-
-
-/* Footer */
-footer { max-width: var(--max-width); margin: 18px auto; padding: 12px; display:flex; justify-content:space-between; align-items:center; background:#e65100; color:white; border-radius:6px; gap:12px; flex-wrap:wrap; }
-footer a { color: white; text-decoration:none; }
-
-/* Chatbot */
-#chatbot-button { position:fixed; bottom:70px; right:30px; background:#f57f17; color:white; padding:10px 20px; border-radius:25px; cursor:pointer; }
-#chatbot-box { display:none; position:fixed; bottom:20px; right:20px; width:280px; height:300px; background:white; border:1px solid #ccc; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.2); display:flex; flex-direction:column; }
-#chat-header { background:#f57f17; color:white; padding:8px; font-weight:bold; display:flex; justify-content:space-between; }
-#chat-body { flex:1; padding:10px; overflow-y:auto; font-size:14px; }
-#chat-body .user { text-align:right; color:#1565c0; margin:5px; }
-#chat-body .bot { text-align:left; color:#2e7d32; margin:5px; }
-#chat-input { display:flex; border-top:1px solid #ccc; }
-#chat-input input { flex:1; border:none; padding:8px; }
-#chat-input button { background:#f57f17; border:none; color:white; padding:8px 12px; cursor:pointer; }
-
-
-/* Responsive tweaks */
-@media (max-width: 900px) {
-  .gallery .media-card { flex: 1 1 45%; }
-  .hero { height: 200px; }
+0%   { transform: translateY(0); }
+100% { transform: translateY(-50%); }
 }
-@media (max-width: 520px) {
-  .gallery .media-card { flex: 1 1 100%; }
-  .gallery .media-card img, .gallery .media-card video { max-height: 260px; }
-  nav ul { gap:6px; }
-}
+.scroll-list:hover .scroll-list-content {animation-play-state: paused;}
+.downloads, .links {background: #fffde7;border: 2px solid #ccc;border-radius: 6px;padding: 15px;margin: 10px 0;}
+.downloads a, .links a {display: block;margin: 6px 0;color: #1565c0;text-decoration: none;font-weight: 500;}
+.downloads a:hover, .links a:hover {text-decoration: underline;}
 
+/* --- General Form Styling --- */
+label {display: block;margin-bottom: 5px;font-weight: bold;color: #555;}
+input[type="text"], input[type="date"], input[type="number"],
+input[type="email"], input[type="password"], select {width: 100%;padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;font-size: 1rem;}
+.form-row {display: flex;flex-wrap: wrap;gap: 15px;margin-bottom: 15px;}
+.form-field {flex: 1 1 calc(33.333% - 10px);min-width: 150px;}
+.form-field input[type="date"] {min-height: 42px;}
+.booking-controls {text-align: center;margin-top: 15px;}
+.btn {transition: background-color 0.2s ease-in-out;padding: 8px 15px;border: none;background: #f57f17;color: white;font-weight: 600;border-radius: 6px;cursor: pointer;}
+.btn:hover {background:#ef6c00;}
 
-/* Heatmap Legend */
-.legend {background: white; padding: 8px 12px; line-height: 18px; color: #333; border-radius: 6px; box-shadow: 0 0 6px rgba(0,0,0,0.2); font-size: 13px;}
-.legend h4 {margin: 0 0 6px; font-size: 14px; font-weight: bold;}
-.legend i {display: inline-block; width: 16px; height: 16px; margin-right: 6px; opacity: 0.8; border: 1px solid #ccc;}
+/* ===================================================================
+HEATMAP, GRAPH & TIMELINE STYLES
+=================================================================== */
+#mapTab, #graphTab {padding-bottom: 10px;margin-bottom: 0;}
 
+.timeline-controls {display: flex; align-items: center; gap: 12px; margin-top: 12px; padding: 8px; background-color: #f0f0f0; border-radius: 8px; }
+.play-btn {background: #f57f17; color: white; border: none; font-size: 18px; font-weight: bold; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; flex-shrink: 0; }
+.play-btn:hover {background: #ef6c00; }
+.slider {-webkit-appearance: none; width: 100%; height: 8px; background: #ddd; outline: none; border-radius: 5px; }
+.slider::-webkit-slider-thumb {-webkit-appearance: none; appearance: none; width: 20px; height: 20px; background: #f57f17; cursor: pointer; border-radius: 50%; border: 2px solid white; box-shadow: 0 0 4px rgba(0,0,0,0.3); }
+.slider::-moz-range-thumb {width: 20px; height: 20px; background: #f57f17; cursor: pointer; border-radius: 50%; border: 2px solid white; box-shadow: 0 0 4px rgba(0,0,0,0.3); }
+.time-label {font-size: 14px; font-weight: 600; color: #333; min-width: 150px; text-align: center; background: #fff; padding: 5px 8px; border-radius: 4px; }
+.stepper-controls {margin-top: 20px; text-align: center; display: flex; justify-content: center; align-items: center; gap: 15px; }
+.stepper-controls button {padding: 8px 16px; border-radius: 6px; cursor: pointer; border: 1px solid #ccc; background-color: #f0f0f0; font-size: 14px; font-weight: 500; }
+.stepper-controls button:hover {background-color: #e0e0e0; }
+.time-label-count {font-size: 16px; font-weight: 600; color: #333; min-width: 110px; padding: 8px 12px; background-color: #fff; border: 1px solid #ddd; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+.legend {background: white; padding: 8px 12px; line-height: 1.6; color: #333; border-radius: 6px; box-shadow: 0 1px 5px rgba(0,0,0,0.4); font-size: 13px; }
+.legend h4 {margin: 0 0 6px; font-size: 14px; font-weight: bold; text-align: center; }
+.legend i {display: inline-block; width: 16px; height: 16px; margin-right: 6px; border: 1px solid #999; vertical-align: middle; }
+.legend-snapchat {background-color: rgba(0, 0, 0, 0.6); color: white; box-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+.legend-snapchat h4 {color: white; }
+.legend-snapchat i {border: 1px solid rgba(255, 255, 255, 0.5); }
+.graph-controls {margin-bottom: 15px; text-align: center; padding: 10px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.graph-container {background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-top: 10px; position: relative; }
+#crowdLineChart {width: 100% !important; height: 400px !important; }
 
-/* ======= ADD THIS TO THE END of your style.css ======= */
+/* ===================================================================
+FOOTER & CHATBOT
+=================================================================== */
+footer {max-width: var(--max-width); margin: 18px auto; padding: 12px; display: flex; justify-content: space-between; align-items: center; background: #e65100; color: white; border-radius: 6px; gap: 12px; flex-wrap: wrap; }
+footer a {color: white; text-decoration: none; }
+#chatbot-button {position: fixed; bottom: 70px; right: 30px; background: #f57f17; color: white; padding: 10px 20px; border-radius: 25px; cursor: pointer; z-index: 1000; }
+#chatbot-box {display: none; position: fixed; bottom: 20px; right: 20px; width: 280px; height: 300px; background: white; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); display: flex; flex-direction: column; z-index: 1000; }
+#chat-header {background: #f57f17; color: white; padding: 8px; font-weight: bold; display: flex; justify-content: space-between; }
+#chat-body {flex: 1; padding: 10px; overflow-y: auto; font-size: 14px; }
+#chat-body .user { text-align: right; color: #1565c0; margin: 5px; }
+#chat-body .bot { text-align: left; color: #2e7d32; margin: 5px; }
+#chat-input { display: flex; border-top: 1px solid #ccc; }
+#chat-input input { flex: 1; border: none; padding: 8px; }
+#chat-input button { background: #f57f17; border: none; color: white; padding: 8px 12px; cursor: pointer; }
 
-/* Heatmap Legend */
-.legend {
-background: white;
-padding: 8px 12px;
-line-height: 1.6;
-color: #333;
-border-radius: 6px;
-box-shadow: 0 1px 5px rgba(0,0,0,0.4);
-font-size: 13px;
-}
-.legend h4 {
-margin: 0 0 6px;
-font-size: 14px;
-font-weight: bold;
-text-align: center;
-}
-.legend i {
-display: inline-block;
-width: 16px;
-height: 16px;
-margin-right: 6px;
-opacity: 0.8;
-border: 1px solid #999;
-vertical-align: middle;
-}
-
-/* New Timeline Controls */
-.timeline-controls {
-display: flex;
-align-items: center;
-gap: 12px;
-margin-top: 12px;
-padding: 8px;
-background-color: #f0f0f0;
-border-radius: 8px;
-}
-.play-btn {
-background: #f57f17;
-color: white;
-border: none;
-font-size: 18px;
-font-weight: bold;
-width: 40px;
-height: 40px;
-border-radius: 50%;
-cursor: pointer;
-flex-shrink: 0;
-}
-.play-btn:hover {
-background: #ef6c00;
-}
-.slider {
--webkit-appearance: none;
-width: 100%;
-height: 8px;
-background: #ddd;
-outline: none;
-opacity: 0.9;
--webkit-transition: .2s;
-transition: opacity .2s;
-border-radius: 5px;
-}
-.slider::-webkit-slider-thumb {
--webkit-appearance: none;
-appearance: none;
-width: 20px;
-height: 20px;
-background: #f57f17;
-cursor: pointer;
-border-radius: 50%;
-border: 2px solid white;
-box-shadow: 0 0 4px rgba(0,0,0,0.3);
-}
-.slider::-moz-range-thumb {
-width: 20px;
-height: 20px;
-background: #f57f17;
-cursor: pointer;
-border-radius: 50%;
-border: 2px solid white;
-box-shadow: 0 0 4px rgba(0,0,0,0.3);
-}
-.time-label {
-font-size: 14px;
-font-weight: 600;
-color: #333;
-min-width: 150px; /* Prevents layout shift */
-text-align: center;
-background: #fff;
-padding: 5px 8px;
-border-radius: 4px;
-}
-
-
-/* --- ADD THIS TO THE END of your style.css --- */
-
-/* Snapchat-style Legend */
-.legend-snapchat {
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
-  color: white; /* White text */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-}
-.legend-snapchat h4 {
-  color: white;
-}
-.legend-snapchat i {
-  border: 1px solid rgba(255, 255, 255, 0.5); /* Light border for color blocks */
-}
-
-/* --- ADD THIS TO THE END of your style.css --- */
-
-/* Controls for the Count Tab (Prev/Time/Next) */
-.stepper-controls {margin-top: 20px; text-align: center; display: flex; justify-content: center; align-items: center; gap: 15px;}
-
-.stepper-controls button {padding: 8px 16px; border-radius: 6px; cursor: pointer; border: 1px solid #ccc; background-color: #f0f0f0; font-size: 14px; font-weight: 500;}
-.stepper-controls button:hover {background-color: #e0e0e0;}
-.time-label-count {font-size: 16px; font-weight: 600; color: #333; min-width: 110px; padding: 8px 12px; background-color: #fff; border: 1px solid #ddd; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);}
-
-
-/* General form styling */
-label {
-  display: block; /* Labels on their own line */
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #555;
-}
-
-input[type="text"],
-input[type="date"],
-input[type="number"],
-input[type="email"],
-input[type="password"],
-select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px; /* Space below each input */
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box; /* Include padding in width */
-  font-size: 1rem;
-}
-
-/* Flexbox for From, To, Date row */
-.form-row {
-  display: flex;
-  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-  gap: 15px; /* Space between fields */
-  margin-bottom: 15px;
-}
-
-.form-field {
-  flex: 1 1 calc(33.333% - 10px); /* Distribute space evenly for 3 items, considering gap */
-  min-width: 150px; /* Minimum width for fields before wrapping */
-}
-
-/* Specific adjustments for date input to prevent extra space */
-.form-field input[type="date"] {
-  min-height: 42px; /* Ensure date input aligns visually with text inputs */
-}
-
-/* Center the search button */
-.booking-controls {
-  text-align: center;
-  margin-top: 15px;
-}
-
-/* Modal specific styling */
-.modal-content h3 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.modal-booking-details {
-  display: flex;
-  flex-direction: column; /* Stack labels and inputs vertically */
-  gap: 10px; /* Space between each label-input pair */
-  margin-bottom: 20px;
-}
-
-.modal-booking-details input {
-  margin-bottom: 0; /* Remove extra margin below inputs inside this flex container */
-}
-
-.modal-actions {
-  display: flex;
-  justify-content: center; /* Center buttons */
-  gap: 15px; /* Space between buttons */
-  margin-top: 20px;
-}
-
-/* Responsive adjustments for smaller screens */
+/* ===================================================================
+RESPONSIVE STYLES (MOBILE)
+=================================================================== */
 @media (max-width: 768px) {
-  .form-field {
-    flex: 1 1 100%; /* Stack fields vertically on small screens */
-  }
-  .form-row {
-    flex-direction: column;
-  }
+.menu-toggle {display: inline-block; }
+nav {display: flex; justify-content: flex-end; flex-wrap: wrap; }
+nav ul {display: none; flex-direction: column; width: 100%; order: 2;}
+nav ul.showing {display: flex; }
+nav li ul {position: static; box-shadow: none; padding-left: 15px; background: #fdecc6; }
+.form-field {flex: 1 1 100%; }
+.form-row {flex-direction: column; }
 }
 
 
-/* --- ADD THIS TO THE END of your style.css --- */
+/* ===================================================================
+STYLE FOR LIVE DARSHAN
+=================================================================== */
+/* Styles for the live video section */
+.live-video-section {max-width: 900px;margin: 20px auto;padding: 20px;background-color: #fffde7;border: 2px solid #f57f17;border-radius: 8px;}
+.live-video-section h2 {text-align: center;color: #d84315;margin-bottom: 20px;}
 
-/* Bus Results Styling */
-.bus-item {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin-bottom: 12px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  overflow: hidden; /* Ensures child elements respect the border radius */
-}
+/* Informational note style */
+.live-status-note {text-align: center;margin-bottom: 20px;padding: 10px;background-color: #fff3e0;border: 1px solid #ffe0b2;border-radius: 6px;font-size: 0.95rem;}
 
-.bus-details {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-}
+/* Responsive container to maintain 16:9 aspect ratio */
+.video-container {position: relative;padding-bottom: 56.25%;height: 0;overflow: hidden;border-radius: 8px;box-shadow: 0 4px 8px rgba(0,0,0,0.1);}
+.video-container iframe {position: absolute;top: 0;left: 0;width: 100%;height: 100%;border: 0;}
 
-.bus-meta {
-  font-size: 0.9rem;
-  color: #666;
-}
-
-.bus-actions .btn {
-  font-size: 0.9rem;
-}
-
-/* Inline Booking Form Styling */
-.inline-booking-form {
-  padding: 20px;
-  background-color: #f7f7f7; /* Slightly different background to stand out */
-  border-top: 1px solid #ddd;
-}
-
-.inline-booking-form h4 {
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-size: 1.2rem;
-  color: #333;
-}
-
-.inline-form-fields label {
-  font-weight: 500;
-  margin-top: 10px;
-}
-
-.inline-form-fields input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 100%;
-}
-
-.form-actions {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.form-actions .btn-cancel {
-  background-color: #888;
-}
-.form-actions .btn-cancel:hover {
-  background-color: #666;
-}
-
-/* General button enhancement */
-.btn {
-  transition: background-color 0.2s ease-in-out;
-}
+/* Heading for the latest videos section */
+.latest-videos-heading {text-align: center;color: #d84315;margin-top: 40px;margin-bottom: 20px;}
