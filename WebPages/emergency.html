@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css"/>
   <style>
     /* Top Head Control panel */
-    .head-wrap{position:sticky;top:0;z-index:50;background:#fffef5;border-bottom:1px solid #f3e4c2}
+    .head-wrap{z-index:50;background:#fffef5;}
     .head-grid{max-width:1100px;margin:10px auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
     .head-card{background:#fff3cd;border:1px solid #f57f17;border-radius:10px;padding:10px}
     .head-card h3{margin:0 0 6px}
@@ -43,7 +43,7 @@
 
 <!-- Header -->
 <div class="top-banner">
-  <div class="top-left"><img src="file:///C:\Users\HP\Desktop\New Work\simhasth web\logo\logo.jpeg" alt = 'Logo'><span>सिंहस्थ 2028</span></div>
+  <div class="top-left"><img src="Images\logo.jpeg" alt = 'Logo'><span>सिंहस्थ 2028</span></div>
   <div class="top-right"><span onclick="toggleNotif()">🔔</span>    <a href="login.html">Login</a>
     <a href="register.html">Register</a></div>
   <div id="notif-box"><p>ℹ️ आपातकालीन स्थिति में कृपया निकटतम नियंत्रण कक्ष/पुलिस/एंबुलेंस से तुरंत संपर्क करें।</p></div>
@@ -96,8 +96,30 @@
   </ul>
 </nav>
 
-<!-- Hero -->
-<div class="hero" style="background:url('https://via.placeholder.com/1200x300.png?text=Emergency+Control+Rooms') center/cover no-repeat;"></div>
+
+<!-- Filters -->
+<div class="filter-bar">
+  <input type="text" id="searchBox" placeholder="खोजें: ज़ोन/सेवा/स्थान/किवर्ड..." oninput="renderZones()"/>
+  <select id="zoneFilter" onchange="renderZones()">
+    <option value="">क्षेत्र/ज़ोन (सभी)</option>
+    <option>महाकाल क्षेत्र</option>
+    <option>रामघाट क्षेत्र</option>
+    <option>मंगलनाथ क्षेत्र</option>
+    <option>कुम्भ क्षेत्र-उत्तर</option>
+    <option>कुम्भ क्षेत्र-दक्षिण</option>
+  </select>
+  <select id="serviceFilter" onchange="renderZones()">
+    <option value="">सेवा (सभी)</option>
+    <option>Police</option>
+    <option>Health</option>
+    <option>Fire</option>
+    <option>Rescue</option>
+    <option>Lost&Found</option>
+    <option>Traffic</option>
+    <option>Volunteer</option>
+  </select>
+</div>
+
 
 <!-- ====== HEAD CONTROL ROOMS (Sticky) ====== -->
 <div class="head-wrap">
@@ -126,29 +148,6 @@
     </div>
   </div>
   <div class="head-note">* ऊपर दिए नंबर/ईमेल placeholders हैं—कृपया अपने आधिकारिक डेटा से अपडेट करें।</div>
-</div>
-
-<!-- Filters -->
-<div class="filter-bar">
-  <input type="text" id="searchBox" placeholder="खोजें: ज़ोन/सेवा/स्थान/किवर्ड..." oninput="renderZones()"/>
-  <select id="zoneFilter" onchange="renderZones()">
-    <option value="">क्षेत्र/ज़ोन (सभी)</option>
-    <option>महाकाल क्षेत्र</option>
-    <option>रामघाट क्षेत्र</option>
-    <option>मंगलनाथ क्षेत्र</option>
-    <option>कुम्भ क्षेत्र-उत्तर</option>
-    <option>कुम्भ क्षेत्र-दक्षिण</option>
-  </select>
-  <select id="serviceFilter" onchange="renderZones()">
-    <option value="">सेवा (सभी)</option>
-    <option>Police</option>
-    <option>Health</option>
-    <option>Fire</option>
-    <option>Rescue</option>
-    <option>Lost&Found</option>
-    <option>Traffic</option>
-    <option>Volunteer</option>
-  </select>
 </div>
 
 <!-- Zones -->
