@@ -108,7 +108,7 @@
 <div class="section">
   <h2>भीड़ डेटा</h2>
   <div class="tab-buttons">
-    <button onclick="showCrowdTab('countTab')">📊 काउंट</button>
+    <button onclick="showCrowdTab('countTab')">📊 भीड़ संख्या</button>
     <button onclick="showCrowdTab('mapTab')">🗺️ सिंहस्थ क्षेत्र</button>
     <button onclick="showCrowdTab('graphTab')">📈 ग्राफ</button>
   </div>
@@ -117,8 +117,8 @@
     <table id="crowdTable">
       <thead>
         <tr>
-          <th>स्थान</th>
-          <th>भीड़ संख्या</th>
+          <th class="th-location">स्थान</th>
+          <th class="th-count">भीड़ संख्या</th>
         </tr>
       </thead>
       <tbody>
@@ -157,18 +157,20 @@
 
 <div class="section">
   <h2>डाउनलोड और अन्य लिंक</h2>
-  <div class="downloads">
-	<h3>डाउनलोड</h3>
-    <a href="Images\user menual.pdf">📘 यूजर मैनुअल डाउनलोड</a>
-    <a href="#">📱 Android App</a>
-    <a href="#">🍏 iOS App</a>
-  </div>
-  <div class="links">
-    <h3>सरकारी लिंक</h3>
-    <a href="#">🏛 नगर पालिका निगम</a>
-    <a href="#">🔒 साइबर सुरक्षा</a>
-    <a href="#">🚓 पुलिस विभाग</a>
-    <a href="#">🚑 स्वास्थ्य सेवाएं</a>
+  <div class="link-container">
+    <div class="downloads">
+      <h3>डाउनलोड</h3>
+        <a href="Images\user menual.pdf" target="_blank" rel="noopener noreferrer">📘 यूजर मैनुअल डाउनलोड</a>
+        <a href="#">📱 Android App</a>
+        <a href="#">🍏 iOS App</a>
+      </div>
+      <div class="links">
+          <h3>सरकारी लिंक</h3>
+          <a href="http://nagarnigamujjain.org/hindi/" target="_blank" rel="noopener noreferrer">🏛 नगर पालिका निगम</a>
+          <a href="https://ujjain.nic.in/en/" target="_blank" rel="noopener noreferrer">🏛 जिला उज्जैन</a>
+          <a href="https://ujjain.mppolice.gov.in/" target="_blank" rel="noopener noreferrer">🚓 पुलिस विभाग</a>
+          <a href="https://ujjain.nic.in/en/public-utility-category/hospitals/" target="_blank" rel="noopener noreferrer">🚑 स्वास्थ्य सेवाएं</a>
+      </div>
   </div>
 </div>
 

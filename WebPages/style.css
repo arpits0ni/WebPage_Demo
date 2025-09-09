@@ -5,7 +5,7 @@ BASE & GENERAL STYLES
 body {font-family: "Noto Sans", Arial, sans-serif;background: #fffef5;color: #222;line-height: 1.5;-webkit-font-smoothing: antialiased;}
 :root {--max-width: 1100px;}
 .section {max-width: var(--max-width);margin: 14px auto;padding: 0 0px;}
-.section h2 {background: #f57f17;color: white;padding: 8px;border-radius: 6px;text-align: center;margin-bottom: 15px;}
+.section h2 {background: #f57f17;color: white;padding: 8px;border-radius: 6px;text-align: center;margin-bottom: 6px; margin-top: 6px;}
 
 /* ===================================================================
 HEADER, NAVIGATION & BANNERS
@@ -54,10 +54,13 @@ WIDGETS & COMPONENTS (Tabs, Tables, Forms, etc.)
 .crowd-tab {display: none;background: #fffde7;border: 2px solid #ccc;border-radius: 6px;padding: 15px;}
 .crowd-tab.active {display: block;}
 #countTab table {margin: 0 auto;width: auto;min-width: 300px;}
+#crowdTable .th-location {text-align: left;}
+#crowdTable .th-count,
+#crowdTable .count {text-align: right;}
 
 /* --- Info Boxes & Lists --- */
 .info-boxes {display: flex;gap: 20px;flex-wrap: wrap;}
-.info-box {flex: 1;min-width: 250px;background: #fffde7;border: 2px solid #ccc;border-radius: 6px;padding: 15px;margin: 10px 0;}
+.info-box {flex: 1;min-width: 250px;background: #fffde7;border: 2px solid #ccc;border-radius: 6px;padding: 15px;margin: 8px 0;}
 .info-box ul {padding-left: 25px;}
 
 /* FIX: Added back the scroll list animation */
@@ -82,6 +85,11 @@ input[type="email"], input[type="password"], select {width: 100%;padding: 10px;m
 .booking-controls {text-align: center;margin-top: 15px;}
 .btn {transition: background-color 0.2s ease-in-out;padding: 8px 15px;border: none;background: #f57f17;color: white;font-weight: 600;border-radius: 6px;cursor: pointer;}
 .btn:hover {background:#ef6c00;}
+
+.link-container {display: flex; gap: 10px; flex-wrap: wrap;}
+.link-container > div {flex: 1; min-width: 250px;}
+.link-container a {transition: transform 0.2s ease-out, filter 0.2s ease-out;}
+.link-container a:hover {transform: translateY(-3px); filter: brightness(1.1);}
 
 /* ===================================================================
 HEATMAP, GRAPH & TIMELINE STYLES
