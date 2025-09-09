@@ -91,12 +91,10 @@
     <div class="tabs">
       <div class="tab active" data-tab="loginTab" onclick="switchTab(this)">Login (ID/Password)</div>
       <div class="tab" data-tab="otpTab" onclick="switchTab(this)">Login with OTP</div>
-      <div class="tab" data-tab="forgotUidTab" onclick="switchTab(this)">Forgot User ID</div>
-      <div class="tab" data-tab="forgotPwdTab" onclick="switchTab(this)">Forgot Password</div>
     </div>
 
     <!-- Login (User/Pass) -->
-    <div id="loginTab">
+	<div id="loginTab">
       <div class="row">
         <div class="field">
           <label>यूज़र आईडी</label>
@@ -110,23 +108,16 @@
       <div class="row">
         <button class="btn" onclick="doLogin()">🔑 Login</button>
       </div>
-      <div class="links" style="margin-top:8px">
-        <a href="#" onclick="openTab('forgotUidTab')">Forgot User ID?</a>
-        <a href="#" onclick="openTab('forgotPwdTab')">Forgot Password?</a>
-        <a href="#" onclick="openTab('otpTab')">Login with OTP</a>
-      </div>
     </div>
 
     <!-- Login with OTP -->
-    <div id="otpTab" class="hidden">
+	<div id="otpTab" class="hidden">
       <div class="row">
         <div class="field">
           <label>मोबाइल नंबर</label>
           <input id="otpMobile" placeholder="10 अंकों का मोबाइल" maxlength="10" oninput="this.value=this.value.replace(/[^0-9]/g,'')"/>
           <span class="muted">डेमो OTP जेनरेट होगा।</span>
         </div>
-      </div>
-      <div class="row">
         <div class="field">
           <label>OTP</label>
           <div style="display:flex;gap:8px">
@@ -185,6 +176,11 @@
         <button class="btn" onclick="resetPassword()">✅ Reset Password</button>
       </div>
       <div id="fpMsg" class="muted" style="margin-top:8px"></div>
+    </div>
+	</div>
+	<div class="links" style="margin-top: 16px; padding-top: 12px; border-top: 1px solid #ddd;">
+      <a href="#" onclick="openTab('forgotUidTab')">Forgot User ID?</a>
+      <a href="#" onclick="openTab('forgotPwdTab')">Forgot Password?</a>
     </div>
   </div>
 </div>
