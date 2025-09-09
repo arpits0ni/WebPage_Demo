@@ -58,6 +58,7 @@ WIDGETS & COMPONENTS (Tabs, Tables, Forms, etc.)
 /* --- Info Boxes & Lists --- */
 .info-boxes {display: flex;gap: 20px;flex-wrap: wrap;}
 .info-box {flex: 1;min-width: 250px;background: #fffde7;border: 2px solid #ccc;border-radius: 6px;padding: 15px;margin: 10px 0;}
+.info-box ul {padding-left: 25px;}
 
 /* FIX: Added back the scroll list animation */
 .scroll-list {height: 140px; overflow: hidden; position: relative; margin-top: 10px; border-radius: 6px; }
@@ -152,11 +153,11 @@ STYLE FOR LIVE DARSHAN
 /* ===================================================================
 GALLERY STYLES
 ====================================================================== */
-.gallery {display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; align-items: flex-start; margin-bottom: 12px; }
-.gallery .media-card {flex: 1 1 300px; max-width: 100%; background: #000; border-radius: 10px; padding: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); display: flex; flex-direction: column; align-items: center;}
+.gallery {display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; align-items: flex-start; margin-bottom: 12px;}
+.gallery .media-card {flex: 1 1 300px; max-width: 100%; background: #fffde7; border-radius: 10px; padding: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); display: flex; flex-direction: column; align-items: center;}
 .gallery .media-card img,
-.gallery .media-card video {width: 100%; height: auto; max-height: 320px; object-fit: contain; border-radius: 6px; background: #000; display:block;}
-.gallery .media-card .caption { margin-top: 8px; color: #fff; font-size: 0.95rem; text-align: center;}
+.gallery .media-card video {width: 100%; height: auto; max-height: 320px; object-fit: contain; border-radius: 6px; background: #fffde7; display:block;}
+.gallery .media-card .caption { margin-top: 8px; color: #000; font-size: 0.95rem; text-align: center;}
 
 /* Responsive tweaks */
 @media (max-width: 900px) {
