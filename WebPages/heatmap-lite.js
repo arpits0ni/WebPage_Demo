@@ -95,6 +95,17 @@
     const nextBtn = document.getElementById('nextStep');
     if (timeSlider) timeSlider.max = timestamps.length - 1;
 
+  const locationSelect = document.getElementById('locationSelect');
+  if (locationSelect) {
+    for (const locId in LOC) {
+        const option = document.createElement('option');
+        option.value = locId;
+        option.innerText = LOC[locId].name;
+        locationSelect.appendChild(option);
+    }
+    locationSelect.addEventListener('change', window.renderCrowdLineChart);
+  }
+
     function stopAnimation() {
       if (animationTimer) { clearInterval(animationTimer); animationTimer = null; }
       if (playPauseBtn) playPauseBtn.innerText = '▶';
